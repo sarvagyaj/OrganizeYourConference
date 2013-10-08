@@ -1,7 +1,7 @@
 package edu.sjsu.conference.domain;
 
 
-public class OrganiserPage implements IUser {
+public class Participant extends User {
 	public void validateUser()
 	{
 		
@@ -10,5 +10,4 @@ public class OrganiserPage implements IUser {
 	{
 	
 	}
-
 }
