@@ -20,18 +20,27 @@ $('#conference').on('click', function (e) {
 </head> 
 
 <body>  
+
+<div class="offset5">
+<h3>Register for Conference</h3></div>
 <div class="row">  
-<div class="span9">  
-<p><span class="label">First Name </span>
-<input type="text" class="span3" placeholder="Your First Name"></p>
-<p><span class="label">Last Name </span>
-<input type="text" class="span3" placeholder="Your Last Name"></p>
-<p><span class="label">Email ID</span>
- <input type="text" class="span3" placeholder="Your Email ID"></p> 
-<p><span class="label">Address</span>
-<input type="text" class="span3" placeholder="Your Address"></p> 
-</div>  
+<div class="span3">
+<div class="offset2">
+
+<p><span class="label">First Name </span></p>
+<input type="text" class="span3" placeholder="Your First Name">
+<p><span class="label">Last Name </span></p>
+<input type="text" class="span3" placeholder="Your Last Name"> 
+<p><span class="label">Email ID</span></p>
+<input type="text" class="span3" placeholder="Your Email ID">
+<p><span class="label">Address</span></p>
+<p><input type="text" class="span3" placeholder="Your Address"> </p>
+<div class="btn-group">
+<a href="index.jsp"><button class="btn"> Conference Registration </button></a>
 </div>
-<div class="btn-group"> <a href="index.jsp"><button class="btn"> Conference Registration </button></a> </div>
+</div>
+</div>
+</div>
+
 </body>  
 </html>

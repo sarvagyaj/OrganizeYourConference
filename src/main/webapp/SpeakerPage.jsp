@@ -9,22 +9,28 @@
 <link href="css/bootstrap.css" rel="stylesheet"> 
 </head>  
 <body>  
-<div class="row">  
-<div class="span">  
-<p><span class="label">First Name</span>
-<input type="text" class="span3" placeholder="Your First Name"></p>
-<p><span class="label">Last Name</span>
-<input type="text" class="span3" placeholder="Your Last Name"></p>
-<p><span class="label">Email ID</span> 
-<input type="text" class="span3" placeholder="Your Email"></p>
-<p><span class="label">Address</span>
-<input type="text" class="span3" placeholder="Your Address"></p>
-<p><span class="label">Experience</span>
-<input type="text" class="span3" placeholder="Your Experience"></p>
-</div>  
-</div>
-<div class="btn-group"> <a href="index.jsp"><button class="btn">Update</button></a> 
+<div class="offset5">
+<h3>Guest Speaker Profile</h3></div>
+<div class="span3">  
+<div class="offset2">
+<p><span class="label">First Name </span></p>
+<input type="text" class="span3" placeholder="Your First Name">
+<p><span class="label">Last Name </span></p>
+<input type="text" class="span3" placeholder="Your Last Name"> 
+<p><span class="label">Email ID</span></p>
+<input type="text" class="span3" placeholder="Your Email ID">
+<p><span class="label">Address</span></p>
+<p><input type="text" class="span3" placeholder="Your Address"> </p>
+<p><span class="label">Experience</span></p>
+<p><input type="text" class="span3" placeholder="Your Address"> </p>
+<div class="btn-group">
+<a href="index.jsp"><button class="btn"> Edit </button></a>
 <a href="index.jsp"><button class="btn">Save</button></a> 
-<a href="index.jsp"><button class="btn">Upload Files</button></a> </div>
+<a href="index.jsp"><button class="btn">Upload Files</button></a> 
+</div>
+
+</div>
+</div>
+
 </body>  
 </html>
