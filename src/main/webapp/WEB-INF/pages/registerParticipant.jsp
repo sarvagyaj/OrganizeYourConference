@@ -10,30 +10,46 @@
 <meta name="description" content="Participant Page">
 <link href="css/bootstrap.css" rel="stylesheet">
 <script src="jquery-2.0.3.js"></script>
-<script>
-	$(function() {
-		$('#conference').on('click', function(e) {
 
-			alert('Hello!');
-		});
-	});
-</script>
+<style>
+p.margin
+{
+margin-top:70px;
+margin-bottom:100px;
+margin-right:50px;
+margin-left:50px;
+}
+
+body
+{
+background-color:#b0c4de;
+margin-top:50px;
+margin-bottom:100px;
+margin-right:50px;
+margin-left:50px;
+}
+</style>
+
+
 </head>
 
 <body>
+<div class="offset5">
+<h3><b><font color = "3333CC" face="Eras Demi ITC">Register for Conference</font></b></h3></div>
 	<div class="row">
 		<div class="span9">
 		<form:form method="post" modelAttribute="participant">
 			<p>
-				<span class="label">Name </span> <form:input type="text" path="name"  placeholder="Your Name"/>
+				<span class="label">First Name </span> <form:input type="text" path="firstName"  placeholder="Your First Name"/>
 			</p>
 			<p>
-				<span class="label">Email ID</span> <input type="text" class="span3"
-					placeholder="Your Email ID">
+				<span class="label">Last Name </span> <form:input type="text" path="lastName"  placeholder="Your last Name"/>
 			</p>
 			<p>
-				<span class="label">Location</span> <input type="text" class="span3"
-					placeholder="Your Location">
+				<span class="label">Email ID</span> <form:input type="email" path="emailId" placeholder="Your Email ID"/>
+			</p>
+			<p>
+				<span class="label">Location</span> <form:input type="text" path="location" placeholder="Your Location"/>
 			</p>
 			<div class="btn-group">
 		<button class="btn">Register</button>

@@ -29,7 +29,8 @@ public class registerParticipantController {
 	        if (result.hasErrors()) {
 	            return "registerParticipant";
 	        }
-	        model.addAttribute("particpantName", participant.getName());
+	        model.addAttribute("particpantFirstName", participant.getFirstName());
+	        model.addAttribute("particpantLastName", participant.getLastName());
 	        model.addAttribute("participantLocation", participant.getLocation());
 			return "success";
 	        

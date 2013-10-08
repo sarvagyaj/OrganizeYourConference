@@ -3,17 +3,30 @@ package edu.sjsu.conference.domain;
 import java.util.List;
 
 public class User {
-	protected String name;
+	
+	protected String firstName,lastName,role;
 	protected long id;
-	protected String emailID;
+	protected String emailId;
 	protected String location;
 	protected List<Long> conferenceID;
 	
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public long getId() {
 		return id;
@@ -21,11 +34,11 @@ public class User {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getEmailID() {
-		return emailID;
+	public String getEmailId() {
+		return emailId;
 	}
-	public void setEmailID(String emailID) {
-		this.emailID = emailID;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 	public String getLocation() {
 		return location;
@@ -39,10 +52,6 @@ public class User {
 	public void setConferenceID(List<Long> conferenceID) {
 		this.conferenceID = conferenceID;
 	}
-
 	
-	//public void getProfile();
-	//public void validateUser();
-	
-	
+			
 }

@@ -10,5 +10,7 @@
 	Hello screwed conference ppl !!! :P
 	
 	 <a href ="registerParticipant">click on register participant</a>
+	 <a href ="SpeakerPage">click on register speaker</a>
+	 
 </body>
 </html>
