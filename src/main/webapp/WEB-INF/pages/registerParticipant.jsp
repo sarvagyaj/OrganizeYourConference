@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +23,9 @@
 <body>
 	<div class="row">
 		<div class="span9">
-		<form method="post" modelAttribute="participant">
+		<form:form method="post" modelAttribute="participant">
 			<p>
-				<span class="label">Name </span> <input type="text"
-					class="span3" placeholder="Your Name">
+				<span class="label">Name </span> <form:input type="text" path="name"  placeholder="Your Name"/>
 			</p>
 			<p>
 				<span class="label">Email ID</span> <input type="text" class="span3"
@@ -34,11 +35,12 @@
 				<span class="label">Location</span> <input type="text" class="span3"
 					placeholder="Your Location">
 			</p>
-			</form>
+			<div class="btn-group">
+		<button class="btn">Register</button>
+	</div>
+			</form:form>
 		</div>
 	</div>
-	<div class="btn-group">
-		<a href="index.jsp"><button class="btn">Register</button></a>
-	</div>
+	
 </body>
 </html>

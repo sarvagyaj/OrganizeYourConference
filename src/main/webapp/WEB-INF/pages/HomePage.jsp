@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	Hello screwed conference ppl !!! :P
+	
+	 <a href ="registerParticipant">click on register participant</a>
 </body>
 </html>

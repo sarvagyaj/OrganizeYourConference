@@ -8,8 +8,7 @@
  
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
-		<servlet-class>
-                       org.springframework.web.servlet.DispatcherServlet
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
                 </servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -31,7 +30,8 @@
 	</listener>
 	
 	<welcome-file-list>
-        <welcome-file>/WEB-INF/pages/registerParticipant.jsp</welcome-file>
+<!--  	<welcome-file>/WEB-INF/pages/registerParticipant.jsp</welcome-file> -->
+        <welcome-file>/WEB-INF/pages/HomePage.jsp</welcome-file>
      </welcome-file-list>
         
  

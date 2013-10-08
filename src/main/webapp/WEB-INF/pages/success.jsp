@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Message : ${particpantName}
+	Message : ${particpantName} and you live at ${particpantLocation}
 </body>
 </html>
