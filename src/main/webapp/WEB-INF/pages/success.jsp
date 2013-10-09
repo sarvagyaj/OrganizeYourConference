@@ -8,5 +8,7 @@
 </head>
 <body>
 	Message : ${particpantFirstName}  ${particpantLastName}  ${participantLocation}
+	Message : ${SpeakerFirstName}  ${SpeakerLastName}  ${SpeakerLocation} ${SpeakerRole}
+	
 </body>
 </html>

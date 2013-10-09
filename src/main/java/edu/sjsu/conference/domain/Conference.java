@@ -15,6 +15,11 @@ public class Conference {
 	private String speaker_link;
 	private String speaker_email;
 	private List<Participant> participants;
+	
+	public Conference()
+	{
+		
+	}
 
 	public long getId() {
 		return id;

@@ -23,7 +23,7 @@ margin-left:50px;
 
 body
 {
-background-color:#F0F0F0;
+background-color:#E6FCB9;
 margin-top:50px;
 margin-bottom:100px;
 margin-right:50px;
@@ -33,14 +33,14 @@ margin-left:50px;
 </head>
 <body>
 <header>
-    <img id="img1" src="images/heading1.jpg" />
+    <img id="img1" src="images/heading_green.gif" />
 </header>
-<img src="images/adv.JPG" width="200" height="200" align = "right"> 
-<div class="offset3">
-<h3><b><font color = "3333CC" face="Eras Demi ITC">Register for Conference</font></b></h3></div>
+<!-- <img src="images/advertisement.jpg" width="200" height="200" align = "right">  -->
+<div class="offset4">
+<h3><b><font color = "336600" face="Eras Demi ITC">Register for Conference</font></b></h3></div>
 <div class="row">  
 <div class="span3">
-<div class="offset2">
+<div class="offset3">
 
 		<form:form method="post" modelAttribute="participant">
 			<p>	<span class="label">First Name </span> </p>
@@ -53,9 +53,10 @@ margin-left:50px;
 			
 			<p>	<span class="label">Location</span></p>
 			<form:input type="text" path="location" placeholder="Your Location"/>
-			
-			<div class="btn-group">
-	    	<button class="btn">Conference Registration</button>
+			<br>
+			<br>
+			<div>
+	    	<button class="btn-large">Conference Registration</button>
 	        </div>
 		</form:form>
 		</div>

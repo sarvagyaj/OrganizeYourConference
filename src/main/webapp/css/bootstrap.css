@@ -268,7 +268,7 @@ table {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: #E6FCB9 !important;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -303,8 +303,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  color: #121B00;
+  background-color: #E6FCB9;
 }
 
 input,
@@ -2048,9 +2048,9 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
-  border-color: #adadad;
+  color: #121B00;
+  background-color: ##8DBF2A;
+  border-color: #273A03;
 }
 
 .btn-default:active,

@@ -14,16 +14,35 @@
 	
 </script>
 <body>
-<form:form method="post" modelAttribute="loginpage">
+<form:form method="post" modelAttribute="loginpage" class="form-signin">
+<h1><font color="#336600" face="Eras Demi ITC"><span>
+Login Please!! 
+</span></font></h1>
+</br>
+</br>
+</br>
+</br>
+<!-- <p>
+	<span>User Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <form:input type="text" path="username"  placeholder="Your username"/>
+</p>
+<p>
+	<span>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <form:input type="password" path="password"  placeholder="Password"/>
+</p>
+<p>
+	<span><form:radiobutton path="type" value="Organizer"/>Organizer 
+		  <form:radiobutton path="type" value="Participant"/>Participant
+		  <form:radiobutton path="type" value="Speaker"/>Speaker</span>
+</p>
+<p>
+	<span>Remember Me </span> <form:input type="checkbox" path="password"  placeholder=""/>
+</p>
 
-<p>
-<span class="label">User Name </span> <form:input type="text" path="username"  placeholder="Your username"/>
-</p>
-<p>
-	<span class="label">Password </span> <form:input type="password" path="password"  placeholder=""/>
-</p>
-<div class="btn-group">
-<button class="btn">Register</button>
+<button class="btnsign">Register</button></a>
+ -->
+ <p>Click <a href="NewConference">here</a> if you are Organizer </p>
+ <p>Click <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/linkedin">
+ here</a> if you are Speaker </p>
+ <p>Click <a href="registerParticipant">here</a> if you are Participant </p>
 </form:form>
 </body>
 </html>

@@ -4,6 +4,9 @@ package edu.sjsu.conference.domain;
 public class LoginPage {
 	protected String username;
 	protected String password;
+	protected String type="Organizer";
+	
+	
 	public String getusername()
 	{
 		return username;
@@ -14,4 +17,11 @@ public class LoginPage {
 	{
 	return password;
 	}
+	public String gettype()
+	{
+		return type;
+	}
+	public void settype(String s){
+		type=s;
+		}
 }
