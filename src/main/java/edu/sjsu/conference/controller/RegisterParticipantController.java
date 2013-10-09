@@ -16,7 +16,7 @@ import edu.sjsu.conference.domain.Participant;
 @RequestMapping("/registerParticipant")
 //@SessionAttributes("participant")
 
-public class registerParticipantController {
+public class RegisterParticipantController {
 		@RequestMapping(method = RequestMethod.GET)
 	    public String setupRegistration(@ModelAttribute("participant") Participant participant1 , BindingResult participant) {
 	        //model.addAttribute("user", new User());

@@ -16,7 +16,7 @@ import edu.sjsu.conference.domain.Speaker;
 @Controller
 @RequestMapping("/SpeakerPage")
 
-public class speakerController {
+public class SpeakerController {
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupRegistration(@ModelAttribute("speaker") Speaker speaker1 , BindingResult speaker) {
