@@ -13,7 +13,8 @@
  
  	<context:annotation-config  proxy-target-class="true"/>
  	<mvc:annotation-driven/>
-	<context:component-scan base-package="edu.sjsu.conference.controller" />
+ 	
+	<context:component-scan base-package="edu.sjsu.conference" />
 	
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/css/**" location="/css/" />

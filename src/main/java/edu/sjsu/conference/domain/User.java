@@ -8,7 +8,7 @@ public class User {
 	protected long id;
 	protected String emailId;
 	protected String location;
-	protected List<Long> conferenceID;
+	
 	
 	public String getFirstName() {
 		return firstName;
@@ -46,12 +46,7 @@ public class User {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public List<Long> getConferenceID() {
-		return conferenceID;
-	}
-	public void setConferenceID(List<Long> conferenceID) {
-		this.conferenceID = conferenceID;
-	}
+	
 	
 			
 }
