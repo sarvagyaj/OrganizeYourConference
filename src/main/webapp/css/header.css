@@ -1,0 +1,43 @@
+    header {
+    width:100%;
+    height:90px;
+    background-color:#F0F0F0 ;
+    border-bottom:2px solid black;
+    }
+    
+    #img1
+    {
+       float:left;
+       width:100%;
+       height:90px;
+    }
+    #img2
+    {
+       float:left;
+       width:80%;
+       height:90px;
+       margin-left:5px; //If you want some space between them
+    }
+    #text
+    {
+       float:left;
+       margin-left:10px;
+    }
+    #title
+    {
+       font-weight:20px;
+       float:left;
+    }
+    #description
+    {
+       font-weight:10px;
+       float:left;
+       clear:both;
+    }
+    #social
+    {
+       float:right;
+    width:100px;
+    height:100px;
+    background-color:blue;
+    }

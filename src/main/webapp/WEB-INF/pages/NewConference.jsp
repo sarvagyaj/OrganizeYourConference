@@ -8,9 +8,33 @@
 <meta name="description" content="Create Conference">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/signin.css" rel="stylesheet">
+<link href="css/header.css" rel="stylesheet">
+<link href="css/ParticipantSpeaker.css" rel="stylesheet">
 <title>Create Conference</title>
+<style>
+p.margin
+{
+margin-top:70px;
+margin-bottom:100px;
+margin-right:50px;
+margin-left:50px;
+}
+
+body
+{
+background-color:#F0F0F0;
+margin-top:50px;
+margin-bottom:100px;
+margin-right:50px;
+margin-left:50px;
+}
+</style>
 </head>
 <body>
+<header>
+    <img id="img1" src="images/heading1.jpg" />
+</header>
+<img src="images/adv.JPG" width="200" height="200" align = "right"> 
 <form:form method="post" modelAttribute="newconference">
 <div>
 <table  id="confdetails">
