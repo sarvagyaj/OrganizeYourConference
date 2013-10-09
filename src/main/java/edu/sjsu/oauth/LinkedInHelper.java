@@ -15,8 +15,10 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import edu.sjsu.conference.domain.Speaker;
+import edu.sjsu.conference.util.ClassConstant;
 
 public class LinkedInHelper {
+	
 
 	public static Speaker getSpeaker(String code) {
 		HttpClient client = new DefaultHttpClient();
@@ -28,7 +30,7 @@ public class LinkedInHelper {
 			nameValuePairs.add(new BasicNameValuePair("grant_type",
 					"authorization_code"));
 			nameValuePairs.add(new BasicNameValuePair("redirect_uri",
-					"http://localhost:8080/organize-your-conference/linkedin"));
+					"http://"+ClassConstant.REDIRECT_URI+"/organize-your-conference/linkedin"));
 			nameValuePairs.add(new BasicNameValuePair("client_id",
 					"9xb4aca5h8ka"));
 			nameValuePairs.add(new BasicNameValuePair("client_secret",

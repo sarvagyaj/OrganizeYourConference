@@ -45,7 +45,7 @@
  
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>	
 	</context-param>
  
 	<listener>
@@ -56,7 +56,6 @@
 
 	
 	<welcome-file-list>
-<!--  	<welcome-file>/WEB-INF/pages/registerParticipant.jsp</welcome-file> -->
         <welcome-file>/WEB-INF/pages/HomePage.jsp</welcome-file>
      </welcome-file-list>
         
