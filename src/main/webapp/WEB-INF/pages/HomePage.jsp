@@ -123,7 +123,7 @@
 	<a href="SpeakerPage">click on register speaker</a>
 	<br>
 	<a
-		href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/linkedin">Login
+		href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.215.230.118:8080/organize-your-conference/linkedin">Login
 		using LinkedIn</a>
 
       <!-- Three columns of text below the carousel -->
