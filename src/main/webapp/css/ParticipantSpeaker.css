@@ -938,7 +938,7 @@ a.badge:focus {
   position: relative;
   top: -1px;
   margin-left:10px;
-  
+  color:336600;
 }
 .btn-mini .label,
 .btn-mini .badge {
@@ -1808,6 +1808,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 0;
   border-radius: 0;
   margin-left:10px;
+  
 }
 .input-append .active,
 .input-prepend .active {
@@ -2056,7 +2057,7 @@ legend + .control-group {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #e6e6e6;
+  background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -2122,11 +2123,13 @@ legend + .control-group {
   box-shadow: none;
 }
 .btn-large {
-  padding: 11px 19px;
-  font-size: 17.5px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  padding: 10px 30px;
+  white-space: nowrap;
+  font-size: 16.5px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 20px;
+  border-radius: 10px;
+  background-color:#00CC00;
 }
 .btn-large [class^="icon-"],
 .btn-large [class*=" icon-"] {
@@ -2883,6 +2886,8 @@ input[type="submit"].btn.btn-mini {
 .btn-group {
   position: relative;
   display: inline-block;
+  color:#336600;
+ 
   *display: inline;
   /* IE7 inline-block hack */
 
@@ -2913,6 +2918,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  background-color:#00CC00;
 }
 .btn-group > .btn + .btn {
   margin-left: -1px;
@@ -3047,6 +3053,7 @@ input[type="submit"].btn.btn-mini {
 }
 .dropup .btn-large .caret {
   border-bottom-width: 5px;
+  
 }
 .btn-primary .caret,
 .btn-warning .caret,

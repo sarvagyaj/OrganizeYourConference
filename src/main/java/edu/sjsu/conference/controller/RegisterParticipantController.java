@@ -17,11 +17,13 @@ import edu.sjsu.conference.domain.Participant;
 //@SessionAttributes("participant")
 
 public class RegisterParticipantController {
+	
+
 		@RequestMapping(method = RequestMethod.GET)
 	    public String setupRegistration(@ModelAttribute("participant") Participant participant1 , BindingResult participant) {
 	        //model.addAttribute("user", new User());
 	        return "registerParticipant"; 
-	    }
+		}
 
 		//yet to be implemented fully
 	    @RequestMapping(method = RequestMethod.POST)

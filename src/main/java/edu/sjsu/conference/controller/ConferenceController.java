@@ -21,7 +21,7 @@ import edu.sjsu.conference.domain.Conference;
 
 public class ConferenceController {
 		@RequestMapping(method = RequestMethod.GET)
-	    public String setupRegistration(@ModelAttribute("newconference") Conference newconference1 , BindingResult newconference) {
+	    public String setupRegistration(@ModelAttribute("conference") Conference conference, BindingResult result) {
 	        return "NewConference"; 
 	    }
 

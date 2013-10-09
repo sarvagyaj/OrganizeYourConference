@@ -25,12 +25,22 @@ public class LoginPageController {
 	        return "LoginPage"; 
 	    }
 
-		//yet to be implemented fully
 	    @RequestMapping(method = RequestMethod.POST)
-	    public String LoginPage(BindingResult result, ModelMap model) {
+	    public String LoginPage(@ModelAttribute("loginpage") @Valid LoginPage loginpage, BindingResult result, ModelMap model) {
 	        
-			return "success";
+			if(loginpage.gettype().equalsIgnoreCase("Organizer")){
+				return "NewConference";
+			}
+			else if(loginpage.gettype().equalsIgnoreCase("Participant")){
+				return "registerParticipant";
+			}
+			else if(loginpage.gettype().equalsIgnoreCase("Speaker")){
+				return "SpeakerPage";
+			}
+			return "success";	
 	        
 	    }
+	    
+	    
 }
 

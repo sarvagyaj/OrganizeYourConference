@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-
     pageEncoding="ISO-8859-1"%>
  
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -21,7 +18,6 @@
 </script>
 </head>
 <body id="HomePage" onload=FirstView() >
-
 
 <div class="navbar-wrapper">
       <div class="container">
@@ -38,7 +34,7 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="registerParticipant">Login</a></li>
+                <li><a href="LoginPage">Login</a></li>
                 <!--  <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -72,12 +68,12 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-        <img src="data:image/png;base64," data-src="image/Krishna.png" alt="First slide">
+        <img src="data:image/png;base64," data-src="image/conference.jpg">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" height="200px">
               <h1>Online Conference Manager</h1>
               <p>Organize all your conference with us for free</p>
-              <p><a class="btn btn-large btn-primary" href="LoginPage">Sign up today</a></p>
+              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
             </div>
           </div>
         </div>
@@ -87,11 +83,11 @@
             <div class="carousel-caption">
               <h1>Want to attend a Conference???</h1>
               <p>Choose a Conference of your best interest and Register with us today to attend it and get great benefits out of it!!</p>
-              <p><a class="btn btn-large btn-primary" href="LoginPage">Sign up today</a></p>
+              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
             </div>
           </div>
         </div>
-        <!--  --><div class="item">
+        <!-- <div class="item">
           <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
@@ -113,18 +109,6 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-    <title>Insert title here</title>
-</head>
-<body>
-	Hello conference ppl !!! :P
-
-	<a href="registerParticipant">click on register participant</a>
-
-	<a href="SpeakerPage">click on register speaker</a>
-	<br>
-	<a
-		href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.215.230.118:8080/organize-your-conference/linkedin">Login
-		using LinkedIn</a>
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
@@ -144,7 +128,7 @@
           <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>Big Data in Education</h2>
           <p>Education is increasingly occurring online or in educational software, resulting in an explosion of data that can be used to improve educational effectiveness and support basic research on learning. In this course, you will learn how and when to use key methods for educational data mining and learning analytics on this data.</p>
-          <p><a class="btn btn-default" href="LoginPage.jsp">Register &raquo;</a></p>
+          <p><a class="btn btn-default" href="LoginPage">Register &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -165,6 +149,5 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/holder.js"></script>
-
 </body>
 </html>

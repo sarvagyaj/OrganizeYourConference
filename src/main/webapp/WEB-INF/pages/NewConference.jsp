@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="description" content="Create Conference">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/signin.css" rel="stylesheet">
-<link href="css/header.css" rel="stylesheet">
+<!-- <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/signin.css" rel="stylesheet"> -->
 <link href="css/ParticipantSpeaker.css" rel="stylesheet">
+<link href="css/header.css" rel="stylesheet">
 <title>Create Conference</title>
 <style>
 p.margin
@@ -22,7 +22,7 @@ margin-left:50px;
 
 body
 {
-background-color:#F0F0F0;
+background-color:#E6FCB9;
 margin-top:50px;
 margin-bottom:100px;
 margin-right:50px;
@@ -32,49 +32,54 @@ margin-left:50px;
 </head>
 <body>
 <header>
-    <img id="img1" src="images/heading1.jpg" />
+    <img id="img1" src="images/heading_green.gif" />
 </header>
-<img src="images/adv.JPG" width="200" height="200" align = "right"> 
-<form:form method="post" modelAttribute="newconference">
-<div>
+
+<form:form method="post" modelAttribute="conference" class="form-signin">
+<div class="offset3">
+<h3><b><font color = "336600" face="Eras Demi ITC">Enter Conference Details</font></b></h3></div>
+<div class="row span3 offset1">
 <table  id="confdetails">
 <tr>
-<td>Topic</td>
+<td><span class="label">Topic</span></td>
 <td><form:input type="text" path="topic" placeholder="Topic of the conference"/></td>	
 </tr>
 <tr>
-<td>Description</td>
+<td><span class="label">Description</span></td>
 <td><form:input type="text" path="description" placeholder="Description"/></td>	
 </tr>
 <tr>
-<td>Venue</td>
+<td><span class="label">Venue</span></td>
 <td><form:input type="text" path="venue" placeholder="Where is it?"/></td>	
 </tr>
 <tr>
-<td>Date</td>
+<td><span class="label">Date</span></td>
 <td><form:input type="text" path="date" placeholder="mm/dd/yyyy"/></td>	
 </tr>
 <tr>
-<td>Time</td>
+<td><span class="label">Time</span></td>
 <td><form:input type="text" path="time" placeholder="when is it"/></td>	
 </tr>
 
 <tr>
-<td>Name of the Speaker</td>
+<td><span class="label">Name of the Speaker</span></td>
 <td><form:input type="text" path="speaker_name" placeholder="who is the Speaker?"/></td>	
 </tr>
 <tr>
-<td>LinkedIn link of Speaker</td>
+<td><span class="label">LinkedIn link of Speaker</span></td>
 <td><form:input type="text" path="speaker_link"  placeholder="Speakers Linkedin link"/></td>	
 </tr>
 <tr>
-<td>Email of Speaker</td>
+<td><span class="label">Email of Speaker</span></td>
 <td><form:input type="text" path="speaker_email"  placeholder="Speaker's email id"/></td>	
 </tr>
 <tr></tr>
 </table>
-<button class="btn">Create New Conference</button>
+<div class="btn-group">
+<button class="btn"> Create New Conference </button>
 <button class="btn">Cancel</button>
+</div>
+
 </div>
 </form:form>
 </body>
