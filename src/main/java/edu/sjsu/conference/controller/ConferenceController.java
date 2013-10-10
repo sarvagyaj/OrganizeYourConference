@@ -26,6 +26,7 @@ public class ConferenceController {
 
 		//yet to be implemented fully
 	    @RequestMapping(method = RequestMethod.POST)
+
 	    public String Conference( @ModelAttribute("conference") @Valid Conference conference, BindingResult result, ModelMap model) {
 	        /*if (result.hasErrors()) {
 	            return "success";
