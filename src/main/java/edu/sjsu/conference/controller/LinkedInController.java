@@ -27,7 +27,7 @@ public class LinkedInController {
 		if (speaker == null) {
 			return new ModelAndView("error");
 		}
-		ModelAndView mv = new ModelAndView("SpeakerProfile");
+		ModelAndView mv = new ModelAndView("SpeakerPage");
 		mv.addObject("speaker", speaker);
 		return mv;
 	}

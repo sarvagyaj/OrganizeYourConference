@@ -8,10 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.HttpServletBean;
 
 import edu.sjsu.conference.domain.Conference;
+import edu.sjsu.conference.domain.Participant;
  
 
 @Controller
@@ -27,9 +26,13 @@ public class ConferenceController {
 
 		//yet to be implemented fully
 	    @RequestMapping(method = RequestMethod.POST)
-	    public String Conference(BindingResult result, ModelMap model) {
-	        
-			return "success";
-	        
+	    public String Conference( @ModelAttribute("conference") @Valid Conference conference, BindingResult result, ModelMap model) {
+	        /*if (result.hasErrors()) {
+	            return "success";
+	        }*/
+	        model.addAttribute("particpantFirstName", conference.gettopic());
+	        model.addAttribute("particpantLastName", conference.getDate());
+	        model.addAttribute("desc", conference.getdescription());
+			return "success1";
 	    }
 }

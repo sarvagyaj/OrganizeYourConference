@@ -56,10 +56,10 @@ margin-left:50px;
 <td><span class="label">Date</span></td>
 <td><form:input type="text" path="date" placeholder="mm/dd/yyyy"/></td>	
 </tr>
-<tr>
-<td><span class="label">Time</span></td>
-<td><form:input type="text" path="time" placeholder="when is it"/></td>	
-</tr>
+<!-- <tr> -->
+<!-- <td><span class="label">Time</span></td> -->
+<%-- <td><form:input type="text" path="time" placeholder="when is it"/></td>	 --%>
+<!-- </tr> -->
 
 <tr>
 <td><span class="label">Name of the Speaker</span></td>

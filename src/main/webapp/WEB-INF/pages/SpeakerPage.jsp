@@ -63,11 +63,11 @@ margin-left:50px;
 <br>
 <br>
 			
-<div class="btn-group">
+<!-- <div class="btn-group">
 <button class="btn"> Edit </button>
 <button class="btn">Save</button>
 <button class="btn">Upload Files</button>
-</div>
+</div> -->
 </form:form>
 
 </div>

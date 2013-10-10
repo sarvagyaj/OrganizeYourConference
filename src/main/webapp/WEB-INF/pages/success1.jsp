@@ -8,7 +8,14 @@
 </head>
 <body script="background-color:#E6FCB9" >
 <p align="center">
-	Hello, ${particpantFirstName} ${particpantLastName} from ${participantLocation}. You have successfully registered for the conference.
+	Hello, Organizer <br>
+	You have made a new conference :<br>
+	Name of the conference : ${particpantFirstName}
+	<br>
+	Venue : ${venue}
+	<br>
+	Conference Details : ${desc}
+	
 	
 	</p>
 </body>
