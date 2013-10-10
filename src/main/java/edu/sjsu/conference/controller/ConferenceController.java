@@ -27,8 +27,13 @@ public class ConferenceController {
 
 		//yet to be implemented fully
 	    @RequestMapping(method = RequestMethod.POST)
-	    public String Conference(BindingResult result, ModelMap model) {
-	        
+		public String NewConference( @ModelAttribute("conference") Conference conference, BindingResult result, ModelMap model) {
+	        if (result.hasErrors()) {
+	            return "success";
+	        }
+	        model.addAttribute("particpantFirstName", conference.gettopic());
+	        model.addAttribute("particpantLastName", conference.getVenue());
+	        model.addAttribute("participantLocation", conference.getDate());
 			return "success";
 	        
 	    }
