@@ -113,22 +113,22 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          
           <h2>Introduction to Finance</h2>
           <p>This course will introduce you to frameworks and tools to measure value; both for corporate and personal assets. It will also help you in decision-making, again at both the corporate and personal levels.</p>
-          <p><a class="btn btn-default" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          
           <h2>Model Thinking</h2>
           <p>In this class, you will learn how to think with models and use them to make sense of the complex world around us.</p>
-          <p><a class="btn btn-default" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
+          
           <h2>Big Data in Education</h2>
           <p>Education is increasingly occurring online or in educational software, resulting in an explosion of data that can be used to improve educational effectiveness and support basic research on learning. In this course, you will learn how and when to use key methods for educational data mining and learning analytics on this data.</p>
-          <p><a class="btn btn-default" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default  btn-primary" href="LoginPage">Register &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
