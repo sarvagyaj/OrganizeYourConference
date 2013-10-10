@@ -32,7 +32,7 @@ public class ConferenceController {
 	            return "success";
 	        }*/
 	        model.addAttribute("particpantFirstName", conference.gettopic());
-	        model.addAttribute("particpantLastName", conference.getDate());
+	        model.addAttribute("particpantLastName", conference.getVenue());
 	        model.addAttribute("desc", conference.getdescription());
 			return "success1";
 	    }
