@@ -40,7 +40,7 @@ Login Please!!
 <button class="btnsign">Register</button></a>
  -->
  <p>Click <a href="NewConference">here</a> if you are Organizer </p>
- <p>Click <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/linkedin">
+ <p>Click <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.215.230.118:8080/organize-your-conference/linkedin">
  here</a> if you are Speaker </p>
  <p>Click <a href="registerParticipant">here</a> if you are Participant </p>
 </form:form>
