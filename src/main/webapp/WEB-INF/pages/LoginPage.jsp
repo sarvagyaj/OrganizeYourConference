@@ -22,23 +22,6 @@ Login Please!!
 </br>
 </br>
 </br>
-<!-- <p>
-	<span>User Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <form:input type="text" path="username"  placeholder="Your username"/>
-</p>
-<p>
-	<span>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <form:input type="password" path="password"  placeholder="Password"/>
-</p>
-<p>
-	<span><form:radiobutton path="type" value="Organizer"/>Organizer 
-		  <form:radiobutton path="type" value="Participant"/>Participant
-		  <form:radiobutton path="type" value="Speaker"/>Speaker</span>
-</p>
-<p>
-	<span>Remember Me </span> <form:input type="checkbox" path="password"  placeholder=""/>
-</p>
-
-<button class="btnsign">Register</button></a>
- -->
  <p>Click <a href="NewConference">here</a> if you are Organizer </p>
  <p>Click <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.215.230.118:8080/organize-your-conference/linkedin">
  here</a> if you are Speaker </p>
