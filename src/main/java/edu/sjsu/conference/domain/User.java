@@ -1,16 +1,11 @@
 package edu.sjsu.conference.domain;
 
 import java.util.List;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class User {
 	
-	@Id
-	protected String id;
-
 	protected String firstName,lastName,role;
+	protected long id;
 	protected String emailId;
 	protected String location;
 	protected List<Long> conferenceID;
@@ -33,10 +28,10 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getEmailId() {
