@@ -17,6 +17,18 @@ Step 4: Run the command prompt in administrative mode.
 Step 5: Switch to the command prompt containing project folder path.
 		Run the command: mvn tomcat:run
 Step 6: Browse the link http://localhost:8080/organize-your-conference.
+
+How to check the database created in the localhost?
+======================================
+1. Download the tool http://mongoexplorer.com/
+2. Open it and click on Connect.
+3. Enter the below details and press on Save(for the first time, otherwise press Load and select the respective configuration).
+	ConnectionName: MongoDB_localhost
+	Host: localhost
+	Port: 27017
+	User Name:
+	Password:
+	Database: organize-your-conference
 		
 
 How to run the application? (MongoLab AWS MongoDB)
@@ -32,7 +44,7 @@ How to check the database in MongoLab?
 ======================================
 1. Download the tool http://mongoexplorer.com/
 2. Open it and click on Connect.
-3. Enter the below details and press on Save(for the first time, otherwise press OK).
+3. Enter the below details and press on Save(for the first time, , otherwise press Load and select the respective configuration).
 	ConnectionName: MongoLab_Deatils
 	Host: ds051788.mongolab.com
 	Port: 51788
