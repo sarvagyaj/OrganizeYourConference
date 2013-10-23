@@ -9,8 +9,14 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<spring.version>3.0.5.RELEASE</spring.version>
+		<spring.version>3.2.2.RELEASE</spring.version>
 	</properties>
+
+	<!--<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>0.5.0.M4</version>
+    </parent>-->
 
 	<dependencies>
 		<!-- Spring 3 dependencies -->
@@ -32,6 +38,20 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!-- mongodb java driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+
+		<!-- Spring data mongodb -->
+		<dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.2.1.RELEASE</version>
+        </dependency>
+
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -43,32 +63,31 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
+
 		<dependency>
 		  <groupId>org.hibernate</groupId>
 		  <artifactId>hibernate-validator-annotation-processor</artifactId>
 		  <version>4.1.0.Final</version>
 		</dependency>
+        
         <dependency>
-	        <groupId>org.slf4j</groupId>
-	        <artifactId>slf4j-log4j12</artifactId>
-	        <version>1.5.2</version>
-    	</dependency>
-    	<dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>servlet-api</artifactId>
-	<version>2.5</version>
-	<scope>provided</scope>
-  </dependency>
-  <dependency>
-	<groupId>org.apache.httpcomponents</groupId>
-	<artifactId>httpclient</artifactId>
-	<version>4.0-alpha4</version>
-</dependency>
-            <dependency>
-	<groupId>org.json</groupId>
-	<artifactId>json</artifactId>
-	<version>20090211</version>
-</dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+  
+  		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.0-alpha4</version>
+		</dependency>
+            
+        <dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
             
 		<dependency>
 			<groupId>junit</groupId>
@@ -76,6 +95,22 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+	    	<groupId>log4j</groupId>
+	    	<artifactId>log4j</artifactId>
+	    	<version>1.2.14</version>
+	    	<type>jar</type>
+    		<scope>compile</scope>
+    	</dependency>
+
+    	<!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
+
+        
+
 	</dependencies>
 
 	<build>
@@ -142,6 +177,49 @@
 					<skipDeploy>true</skipDeploy>
 				</configuration>
 			</plugin>
+
+			<!--<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>-->
+
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-maven-milestone</id>
+			<name>Spring Framework Maven Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
+	</repositories>
+
+	<!--<repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>neo4j</id>
+            <name>Neo4j</name>
+            <url>http://m2.neo4j.org/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>http://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>-->
 </project>
