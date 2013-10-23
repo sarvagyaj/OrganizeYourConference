@@ -4,15 +4,8 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
 public class Conference {
-	//private long id;
-	@Id
-	protected String id;
-	
+	private long id;
 	private String topic;
 	private String description;
 	private Date date;
@@ -28,11 +21,11 @@ public class Conference {
 		
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -116,12 +109,6 @@ public class Conference {
 		this.speaker_email = speaker_email;
 	}
 
-	@Override
-    public String toString() {
-        return String.format(
-                "Conference [id = %s, date = '%s', time = '%s', " + 
-                "venue = '%s', topic = '%s', description = '%s', speaker = '%s']",
-                id, date, time, venue, topic, description, speaker_name);
-    }
+	
 
 }
