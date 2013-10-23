@@ -34,11 +34,20 @@ public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     public Mongo mongo() throws Exception {
 		
-	 //connect to mongoDB
-		MongoClient mongoClient = new MongoClient("ds051788.mongolab.com:51788" ); 
+	// This code needs to be ENABLED for checking mongodb in mongolab[START]	
+
+	 //connect to mongoDB (Mongolab AWS)
+		/*MongoClient mongoClient = new MongoClient("ds051788.mongolab.com:51788" ); 
 		DB database = mongoClient.getDB( "organize-your-conference" ); 
-		boolean auth = database.authenticate("conference", "test123".toCharArray());
+		boolean auth = database.authenticate("conference", "test123".toCharArray());*/
 		
+	// This code needs to be ENABLED for checking mongodb in mongolab[END]
+
+	// This code needs to be DISABLED for checking mongodb in mongolab[START]	
+	// Connect to mongodb (localhost)
+		MongoClient mongoClient = new MongoClient("localhost" ); 
+	// This code needs to be DISABLED for checking mongodb in mongolab[END]
+
 		return mongoClient;
     }
 	
