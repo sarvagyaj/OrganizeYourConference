@@ -39,7 +39,7 @@ public class ConferenceRepository {
     /*public void deleteConference(Conference conference) {
         mongoTemplate.remove(conference, COLLECTION_NAME);
     }*/
-    public void deleteParticipant(String emailId) {
+    public void deleteConference(String emailId) {
         mongoTemplate.remove(new Query(Criteria.where("emailId").is(emailId)), COLLECTION_NAME);
     }
      
