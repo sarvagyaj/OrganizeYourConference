@@ -51,5 +51,16 @@ How to check the database in MongoLab?
 	User Name: conference
 	Password: test123
 	Database: organize-your-conference
+	
+How to check the database in Mongolab?
+======================================
+1. Go to mongolab.com
+2. Click on Sign In
+3. Provide the below credentials:
+	Username: conference
+	Password: test123
+4. You will find teh organize-your-conference database. 
+	Click on it to see the collections and documents.
+	
 
 
