@@ -1,153 +1,96 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
  
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="../../assets/ico/favicon.png">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/carousel.css" rel="stylesheet">
-<title>Organize Your Conference</title>
-
-<script type="text/javascript">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/ParticipantSpeaker.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      
 	
-</script>
-</head>
-<body id="HomePage" onload=FirstView() >
+	 .navbar-pull-right {
+	 	  float:none;
+          padding-left: 10px;
+          padding-right: 40px;
+        }
+    </style>    
+  </head>
 
-<div class="navbar-wrapper">
-      <div class="container">
-        <div class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Organize your Conference</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="LoginPage">Login</a></li>
-                <!--  <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>-->
-              </ul>
-            </div>
-          </div>
+  <body style="background-color:#E6FCB9;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">	
+          <a class="navbar-brand" style="color:white;font-size:30px;font-style:italic;" href="#">Organize Your Conference</a>
+          <p align="right" class="navbar-brand navbar-pull-right">Logged in as <a class="navbar-brand navbar-pull-right" href="#">${UserName}</a></p> 
         </div>
-
       </div>
     </div>
-
-
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-        <img src="data:image/png;base64," data-src="image/conference.jpg">
-          <div class="container">
-            <div class="carousel-caption" height="200px">
-              <h1>Online Conference Manager</h1>
-              <p>Organize all your conference with us for free</p>
-              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
-            </div>
+	
+    <div class="container-fluid" >
+     <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav" height="90%">
+            <ul class="nav nav-list">
+              <li ><a class="nav-header" href="#">Home</a></li>
+              <li class="nav-header"> Profile</li>
+              <li><a class="nav-list" href="ProfilePage">View/Edit Profile</a></li>
+              <li class="nav-header">Conference</li>
+              <li><a class="nav-list" href="NewConference">Create Conference</a></li>
+              <li><a class="nav-list" href="ViewAllPreviousConference">Previous Conferences</a></li>
+              <li><a class="nav-list" href="RegisterParticipant">Register for Conferences</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->	 
+	<form id="ViewConference">
+        <div class="span9">
+          <div class="hero-unit">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
           </div>
-        </div>
-        <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Second slide" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Want to attend a Conference???</h1>
-              <p>Choose a Conference of your best interest and Register with us today to attend it and get great benefits out of it!!</p>
-              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
-            </div>
+          <div class="hero-unit">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
           </div>
-        </div>
-        <!-- <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
-            </div>
+          <div class="hero-unit">         
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>         
           </div>
-        </div>
-      </div>!-->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+          <div class="hero-unit">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          </div>                  
+        </div><!--/span-->      
+	  </form>
+	   </div><!--/row-->
+	    
+      <hr>
 
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          
-          <h2>Introduction to Finance</h2>
-          <p>This course will introduce you to frameworks and tools to measure value; both for corporate and personal assets. It will also help you in decision-making, again at both the corporate and personal levels.</p>
-          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          
-          <h2>Model Thinking</h2>
-          <p>In this class, you will learn how to think with models and use them to make sense of the complex world around us.</p>
-          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          
-          <h2>Big Data in Education</h2>
-          <p>Education is increasingly occurring online or in educational software, resulting in an explosion of data that can be used to improve educational effectiveness and support basic research on learning. In this course, you will learn how and when to use key methods for educational data mining and learning analytics on this data.</p>
-          <p><a class="btn btn-default  btn-primary" href="LoginPage">Register &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-      <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; Edu SJSU. &middot;</p>
+        <p>&copy;SJSU Edu</p>
       </footer>
 
-    </div><!-- /.container -->
+    </div>
+    <script src="js/jquery.js"></script>
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/holder.js"></script>
-</body>
+  </body>
 </html>
