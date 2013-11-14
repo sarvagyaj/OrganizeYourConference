@@ -1,7 +1,6 @@
 package edu.sjsu.oauth;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.apache.http.HttpResponse;

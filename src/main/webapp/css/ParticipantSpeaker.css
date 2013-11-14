@@ -7,7 +7,6 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
- 
 .clearfix {
   *zoom: 1;
 }
@@ -869,28 +868,8 @@ pre code {
   vertical-align: baseline;
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
- 
+  background-color: #999999;
 }
-
-.label {
-  display: inline;
-  padding: .2em .6em .3em;
-  font-size: 100%;
-  font-weight: bold;
-  line-height: 3;
-  color: #08088A;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-}
-
-input,
-  textarea,
-  .uneditable-input {
-    margin-left: 0;
-  }
-
 .label {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

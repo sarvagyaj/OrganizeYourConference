@@ -4800,10 +4800,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .label {
   display: inline;
   padding: .2em .6em .3em;
-  font-size: 100%;
+  font-size: 75%;
   font-weight: bold;
-  line-height: 3;
-  color: #08088A;
+  line-height: 1;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
