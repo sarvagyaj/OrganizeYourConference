@@ -1,18 +1,15 @@
 package edu.sjsu.conference.repository;
 
 import java.util.List;
-import edu.sjsu.conference.domain.Conference;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.UUID;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Repository;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Update; 
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import edu.sjsu.conference.domain.Conference;
  
 @Repository
 public class ConferenceRepository {

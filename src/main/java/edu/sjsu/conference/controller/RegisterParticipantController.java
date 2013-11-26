@@ -32,13 +32,12 @@ import java.util.List;
 public class RegisterParticipantController {
 
 		@Autowired
-    	private ParticipantRepository participantRepository;
+    	private ParticipantRepository repository;
 		
 		protected static Logger log = Logger.getLogger("RegisterParticipantController");
 
 		@RequestMapping(method = RequestMethod.GET)
 	    public String setupRegistration(@ModelAttribute("participant") Participant participant1 , BindingResult participant) {
-	        //model.addAttribute("user", new User());
 	        return "registerParticipant"; 
 		}
 
@@ -52,8 +51,8 @@ public class RegisterParticipantController {
 	        //Code related to MongoDB [START]
 	        log.debug("registerParticipant() : Participant = "+participant.toString());
 
-	        AbstractApplicationContext context = new AnnotationConfigApplicationContext(MongoConfig.class);
-        	ParticipantRepository repository = context.getBean(ParticipantRepository.class);
+	        //AbstractApplicationContext context = new AnnotationConfigApplicationContext(MongoConfig.class);
+        	//ParticipantRepository repository = context.getBean(ParticipantRepository.class);
 	        
 	        //Create collection and insert into it.
 	        repository.addParticipant(participant);
@@ -61,12 +60,9 @@ public class RegisterParticipantController {
 	        // Display all the documents from the collection
 	        List<Participant> part = repository.listParticipant();
 	        for (int i=0;i<part.size();i++)
-	        	System.out.println("Ramya firstname:"+part.get(i));
+	        	System.out.println("firstname:"+part.get(i));
 
-	        //Remove documents from the collection
-	        //repository.deleteParticipant("l@l");
-
-	        //Code related to MongoDB [END]
+	       //Code related to MongoDB [END]
 
 	        model.addAttribute("particpantFirstName", participant.getFirstName());
 	        model.addAttribute("particpantLastName", participant.getLastName());

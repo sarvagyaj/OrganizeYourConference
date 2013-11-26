@@ -14,15 +14,15 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import edu.sjsu.conference.domain.Speaker;
+import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.util.ClassConstant;
 
 public class LinkedInHelper {
 	
 
-	public static Speaker getSpeaker(String code) {
+	public static User getUserDetails(String code) {
 		HttpClient client = new DefaultHttpClient();
-		Speaker speaker = new Speaker();
+		User user = new User();
 		try {
 			HttpPost post = new HttpPost(
 					"https://www.linkedin.com/uas/oauth2/accessToken");
@@ -57,13 +57,13 @@ public class LinkedInHelper {
 							.getEntity());
 					JSONObject jsonUserObj = new JSONObject(userJson);
 
-					speaker.setEmailId(jsonUserObj.getString("emailAddress"));
-					speaker.setFirstName(jsonUserObj.getString("firstName"));
-					speaker.setLastName(jsonUserObj.getString("lastName"));
-					speaker.setRole(jsonUserObj.getString("headline"));
-					speaker.setLocation(jsonUserObj.getJSONObject("location")
+					user.setEmailId(jsonUserObj.getString("emailAddress"));
+					user.setFirstName(jsonUserObj.getString("firstName"));
+					user.setLastName(jsonUserObj.getString("lastName"));
+					user.setPosition(jsonUserObj.getString("headline"));
+					user.setLocation(jsonUserObj.getJSONObject("location")
 							.getString("name"));
-					return speaker;
+					return user;
 				}
 			}
 		} catch (Exception e) {

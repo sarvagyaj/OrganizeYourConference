@@ -14,17 +14,29 @@
 	
 </script>
 <body>
-<form:form method="post" modelAttribute="loginpage" class="form-signin">
+<form:form method="post" modelAttribute="login" class="form-signin">
 <h1><font color="#336600" face="Eras Demi ITC"><span>
 Login Please!! 
 </span></font></h1>
-</br>
-</br>
-</br>
-</br>
+<p>
+	<span class="label">Username </span> </p>
+	<form:input type="text" path="emailId"  placeholder="Your First Name"/>
+
+<p>
+	<span class="label">Password </span> </p>
+	<form:input type="password" path="password"  placeholder="Your last Name"/>
+
+<p>
+	<span class="label">Role</span></p>
+	 <form:input type="text" path="role" placeholder="Your Email ID"/>
+
+<p>
+<div class="btn-group">
+				<button class="btn">Sign In</button>
+			</div>
+
  <p>Click <a href="NewConference">here</a> if you are Organizer </p>
- <p>Click <a href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.215.230.118:8080/organize-your-conference/linkedin">
- here</a> if you are Speaker </p>
+
  <p>Click <a href="registerParticipant">here</a> if you are Participant </p>
 </form:form>
 </body>

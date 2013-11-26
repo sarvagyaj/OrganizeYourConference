@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.sjsu.conference.domain.Speaker;
+import edu.sjsu.conference.domain.User;
 import edu.sjsu.oauth.LinkedInHelper;
 
 @Controller
 @RequestMapping("/linkedin")
 public class LinkedInController {
-
-
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView setup(HttpServletRequest request) {
 
@@ -22,13 +21,13 @@ public class LinkedInController {
 		if (code == null || code == "") {
 			return new ModelAndView("error");
 		}
-		Speaker speaker = LinkedInHelper.getSpeaker(code);
+		User user = LinkedInHelper.getUserDetails(code);
 
-		if (speaker == null) {
+		if (user == null) {
 			return new ModelAndView("error");
 		}
-		ModelAndView mv = new ModelAndView("SpeakerPage");
-		mv.addObject("speaker", speaker);
+		ModelAndView mv = new ModelAndView("SignUp");
+		mv.addObject("user", user);
 		return mv;
 	}
 }

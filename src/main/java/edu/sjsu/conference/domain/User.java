@@ -1,19 +1,29 @@
 package edu.sjsu.conference.domain;
 
+import java.io.Serializable;
 import java.util.List;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
-public class User {
+import org.springframework.context.annotation.Scope;
+import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author saru
+ *
+ */
+@Component
+@Scope("session")
+public class User implements Serializable {
 	
 	@Id
 	protected String id;
 
 	protected String firstName,lastName,role;
 	protected String emailId;
+	protected String password;
 	protected String location;
 	protected List<Long> conferenceID;
+	protected String position;
 	
 	public String getFirstName() {
 		return firstName;
@@ -57,6 +67,28 @@ public class User {
 	public void setConferenceID(List<Long> conferenceID) {
 		this.conferenceID = conferenceID;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
 	
-			
+	//the method copies the attributes of 'user' to called Object's attributes 
+	public void setUser(User user) {
+		this.setFirstName(user.getFirstName());
+		this.setLastName(user.getLastName());
+		this.setEmailId(user.getEmailId());
+		this.setPassword(user.getPassword());
+		this.setLocation(user.getLocation());
+		this.setRole(user.getRole());
+		this.setPosition(user.getPosition());
+	}
+	
 }
