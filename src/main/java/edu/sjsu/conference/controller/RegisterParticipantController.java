@@ -61,11 +61,9 @@ public class RegisterParticipantController {
 	        // Display all the documents from the collection
 	        List<Participant> part = repository.listParticipant();
 	        for (int i=0;i<part.size();i++)
-	        	System.out.println("Ramya firstname:"+part.get(i));
+	        	System.out.println("All participant details:"+part.get(i));
 
-	        //Remove documents from the collection
-	        //repository.deleteParticipant("l@l");
-
+	        
 	        //Code related to MongoDB [END]
 
 	        model.addAttribute("particpantFirstName", participant.getFirstName());

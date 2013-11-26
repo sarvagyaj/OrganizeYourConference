@@ -3,6 +3,8 @@ package edu.sjsu.conference.controller;
 import javax.validation.Valid;
 import org.apache.log4j.Logger;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -51,11 +53,17 @@ public class ConferenceController {
 
 			//Create collection and insert into it.
 			repository.addConference(conference);
+			// Display all the documents from the collection
+	        List<Conference> part = repository.listConference();
+	        for (int i=0;i<part.size();i++)
+	        {
+	        	System.out.println("All Conference details:"+part.get(i));
+	        }
 			//Code related to MongoDB [END]
 		
-	        model.addAttribute("particpantFirstName", conference.gettopic());
-	        model.addAttribute("particpantLastName", conference.getVenue());
-	        model.addAttribute("desc", conference.getdescription());
+	        model.addAttribute("Conference Topic", conference.gettopic());
+	        model.addAttribute("Conference Venue", conference.getVenue());
+	        model.addAttribute("description", conference.getdescription());
 			return "success1";
 	    }
 }

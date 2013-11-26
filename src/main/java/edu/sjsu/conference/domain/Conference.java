@@ -21,7 +21,7 @@ public class Conference {
 	private String speaker_name;
 	private String speaker_link;
 	private String speaker_email;
-	private List<Participant> participants;
+	private List<Conference> conference;
 	
 	public Conference()
 	{
@@ -60,12 +60,12 @@ public class Conference {
 		this.venue = venue;
 	}
 
-	public List<Participant> getParticipants() {
-		return participants;
+	public List<Conference> getConference() {
+		return conference;
 	}
 
-	public void setParticipants(List<Participant> participants) {
-		this.participants = participants;
+	public void setConference(List<Conference> conference) {
+		this.conference = conference;
 	}
 
 	public String gettopic() {

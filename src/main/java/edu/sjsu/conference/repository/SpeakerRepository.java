@@ -42,6 +42,6 @@ public class SpeakerRepository {
     }
      
     public void updateSpeaker(Speaker speaker) {
-        mongoTemplate.insert(speaker, COLLECTION_NAME);      
+             
     }
 }
