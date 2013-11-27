@@ -7,42 +7,69 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.support.SessionStatus;
 
+import edu.sjsu.conference.domain.LoginPage;
 import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.repository.UserRepository;
+import edu.sjsu.conference.validator.LoginValidator;
+import edu.sjsu.conference.validator.SignUpValidator;
 
 @Controller
 @RequestMapping("/SignUp")
+
 public class SignUpController {
+	
+	SignUpValidator signupValidator;
 
 	@Autowired
 	private UserRepository repository;
-
+	
+	@Autowired
+	public SignUpController(SignUpValidator signupValidator){
+		this.signupValidator = signupValidator;
+	}
 	protected static Logger log = Logger.getLogger("SignUpController");
 
+	
 	@RequestMapping(method = RequestMethod.GET)
-	public String setupRegistration(@ModelAttribute("user") @Valid User user,
-			BindingResult result) {
-		return "SignUp";
+	public String initForm(ModelMap model){
+		
+		User user = new User();
+		model.addAttribute("user", user);
+ 		return "SignUp";
 	}
-
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("user") @Valid User user,
 			ModelMap model, BindingResult result) {
-
+		
 		log.debug("createUser : SignUpController = " + user.toString());
-		// Create collection and insert into it.
-		repository.addUser(user);
+		signupValidator.validate(user, result);
+		
+		if (result.hasErrors()) {
+			//if validator failed
+			return "SignUp";
+		} else {
+			
+			// Create collection and insert into it.
+			repository.addUser(user);
 
-		model.addAttribute("particpantFirstName", user.getFirstName());
-		model.addAttribute("particpantLastName", user.getLastName());
-		model.addAttribute("desc", user.getEmailId());
-		return "success1";
+			model.addAttribute("particpantFirstName", user.getFirstName());
+			model.addAttribute("particpantLastName", user.getLastName());
+			model.addAttribute("desc", user.getEmailId());
+			
+			//form success
+			return "HomePage";
+		}
+
+		
 	}
 
 	//API to check that userid entered which is used for logging in the system is not already present

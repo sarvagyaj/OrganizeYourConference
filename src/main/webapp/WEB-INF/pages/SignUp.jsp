@@ -25,12 +25,21 @@ body {
 .sidebar-nav {
 	padding: 9px 0;
 }
-
+.error {
+	color: #ff0000;
+}
 .navbar-pull-right {
 	float: none;
 	padding-left: 10px;
 	padding-right: 40px;
 }
+.errorcss{
+	color: #000;
+	background-color: #ffEEEE;
+	border: 2px solid #ff0000;
+	padding:8px;
+	padding-left:290px;
+	margin:4px;
 }
 </style>
 </head>
@@ -57,20 +66,24 @@ body {
 				<!--/.well -->
 			</div>
 			<!--/span-->
-			<div class="span5"></br></br></br>
-				<form:form method="post" modelAttribute="user" action="/SignUp">
-					<p style="padding-left:190px">Sign Up for a new Account!!<p>
+			<div></br></br></br>
+				<p style="padding-left:290px">Sign Up for a new Account!!<p>
+					
+				<form:form method="post" modelAttribute="user" action="/SignUp" >
+				<form:errors path="*" cssClass="errorcss" element="div"/>
+					
 					<div class=offset3>
 						<table id="signindetails">
 							<tr>
 							<td><span class="label">First Name</span></td>
-					<td><form:input type="text" path="firstName"
-						placeholder="Your First Name" /></td>	
+					    <td><form:input type="text" path="firstName" placeholder="Your First Name" /></td>	
+						<td><form:errors path="firstName" cssClass="error" /></td>
 							</tr>
 							<tr>
 								<td><span class="label">Last Name</span></td>
 					<td><form:input type="text" path="lastName"
 						placeholder="Your last Name" /></td>
+						<td><form:errors path="lastName" cssClass="error" />	</td>
 							</tr>
 							<tr>
 							<td>
@@ -78,25 +91,25 @@ body {
 						        <td><form:radiobutton path="role" value="Organizer" />Organizer
 								<form:radiobutton path="role" value="Speaker" />Speaker
 								<form:radiobutton path="role" value="Participant" />Participant
-								</td>
+							</td>
 							</tr>
 							
 							<tr>
 							<td><span class="label">Email Address</span></td>
 							<td><form:input type="email" path="emailId" placeholder="Your Email ID" />
-							</td>
+							</td><td><form:errors path="emailId" cssClass="error" />	</td>
 							</tr>
 							
 							<tr>
 								<td><span class="label">Password</span></td>
 								<td><form:input type="password" path="password" placeholder="Your Email ID" />
-								</td>
+								</td><td><form:errors path="password" cssClass="error" />	</td>
 							</tr>
 							
 							<tr>
 								<td><span class="label">Confirm Password</span></td>
 								<td><form:input type="password" path="confirmPassword" placeholder="Your Email ID" />
-								 </td>
+								 </td><td><form:errors path="confirmPassword" cssClass="error" /></td>
 							</tr>
 							
 							<tr>
