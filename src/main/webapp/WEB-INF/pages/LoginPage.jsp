@@ -31,10 +31,11 @@
 
 	<div class="loginLabel">Log in <a style="font: 12px helvetica,arial,sans-serif;">Need an Account?</a> 
 	<span id="errorDisplay" style="display:none">The user name or password didn't work</span><span id="oyc-login-signup-close" class="boxCloser">&nbsp;</span>
+
 	</div>	
 	<div id="oyc_login_form">
 	<form:form modelAttribute="loginpage">	
-	
+
 		<form:input class="form-signin" path="username" id="oyc_email" type="text" placeholder="email"></form:input>		
 		<form:input class="form-signin" id="oyc_pass" path="password" name="oyc_name_pass" placeholder="password" type="password" autocomplete="off"></form:input>
 		<button id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="button">Log In</button>

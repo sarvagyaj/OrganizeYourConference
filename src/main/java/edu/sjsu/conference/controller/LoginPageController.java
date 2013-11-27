@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.repository.UserRepository;
+ 
 
 @Controller
 @Scope("request")
 @RequestMapping("/LoginPage")
+
 public class LoginPageController {
 	@Autowired
 	private UserRepository repository;
@@ -31,7 +33,8 @@ public class LoginPageController {
 		return "LoginPage";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	
+	@RequestMapping(value="form",method = RequestMethod.POST)
 	public String SignIn(@ModelAttribute("loginpage") @Valid User loggedUser,
 			BindingResult result, ModelMap model) {
 		User newUser = repository.getUser(loggedUser.getEmailId(),
@@ -55,6 +58,5 @@ public class LoginPageController {
 			System.out.println("Incorrect username/password");
 			return "LoginPage";
 		}
-
 	}
 }
