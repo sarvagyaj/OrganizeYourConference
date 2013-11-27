@@ -31,11 +31,11 @@ public class OrganizerRepository {
         return mongoTemplate.findAll(Organiser.class, COLLECTION_NAME);
     }
      
-    public void deleteSpeaker(Organiser organizer) {
-        mongoTemplate.remove(organizer, COLLECTION_NAME);
+    public void deleteOrganizer(/*Organiser organizer*/) {
+        
     }
      
-    public void updateSpeaker(Organiser organizer) {
-        mongoTemplate.insert(organizer, COLLECTION_NAME);      
+    public void updateOrgnizer(Organiser organizer) {
+        
     }
 }

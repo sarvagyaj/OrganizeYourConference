@@ -15,7 +15,7 @@ body {
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: relative;
-  z-index: 15;
+ /* z-index: 15;*/
 }
 
 
@@ -31,7 +31,7 @@ body {
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+ /* z-index: 10; */ 
 }
 
 /* Declare heights because of positioning of img element */
@@ -101,7 +101,7 @@ body {
 
   /* Navbar positioning foo */
   .navbar-wrapper {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {

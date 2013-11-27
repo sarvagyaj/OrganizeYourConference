@@ -1,27 +1,28 @@
 package edu.sjsu.conference.domain;
 
-
 public class LoginPage {
-	protected String username;
-	protected String password;
-	protected String type="Organizer";
 	
+	private String username;
+	private String password;
+	private String type;
 	
-	public String getusername()
-	{
+	public String getUsername() {
 		return username;
 	}
-	public void setusername(String s){username=s;}
-	public void setpassword(String p){password=p;}
-	public String getpassword()
-	{
-	return password;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String gettype()
-	{
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getType() {
 		return type;
 	}
-	public void settype(String s){
-		type=s;
-		}
+	public void setType(String type) {
+		this.type = type;
+	}
+		
 }
