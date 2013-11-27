@@ -10,53 +10,65 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 
-import edu.sjsu.conference.domain.User;
-import edu.sjsu.conference.repository.UserRepository;
+import edu.sjsu.conference.domain.LoginPage;
+import edu.sjsu.conference.validator.LoginValidator;
  
-
 @Controller
-@Scope("request")
 @RequestMapping("/LoginPage")
 
 public class LoginPageController {
-	@Autowired
-	private UserRepository repository;
 	
-	@Autowired
-	private User user;
-
-	@RequestMapping(method = RequestMethod.GET)
-	public String setupLogin(
-			@ModelAttribute("loginpage") User user,
-			BindingResult loginpage) {
-		return "LoginPage";
-	}
-
-	
-	@RequestMapping(value="form",method = RequestMethod.POST)
-	public String SignIn(@ModelAttribute("loginpage") @Valid User loggedUser,
-			BindingResult result, ModelMap model) {
-		User newUser = repository.getUser(loggedUser.getEmailId(),
-				loggedUser.getRole());
-		
-		if (newUser!=null && loggedUser.getPassword().equals(newUser.getPassword())) {
-			System.out.println("correct password");
-			
-			//setting session object "user"
-			user.setUser(newUser);
-			
-			if (loggedUser.getRole().equalsIgnoreCase("Organizer")) {
-				return "redirect:/UserHome";
-			} else if (loggedUser.getRole().equalsIgnoreCase("Participant")) {
-				return "redirect:/UserHome";
-			} else if (loggedUser.getRole().equalsIgnoreCase("Speaker")) {
-				return "redirect:/UserHome";
-			}
-			return "success";
-		} else {
-			System.out.println("Incorrect username/password");
-			return "LoginPage";
+		LoginValidator loginValidator;
+		@Autowired
+		public LoginPageController(LoginValidator loginValidator){
+			this.loginValidator = loginValidator;
 		}
-	}
+		
+		@RequestMapping(method = RequestMethod.POST)
+		public String processSubmit(
+				@ModelAttribute("loginpage") LoginPage loginpage,
+				BindingResult result, SessionStatus status) {
+			
+			loginValidator.validate(loginpage, result);
+			
+			if (result.hasErrors()) {
+				//if validator failed
+				return "LoginPage";
+			} else {
+				status.setComplete();
+				//form success
+				return "HomePage";
+			}
+		}
+
+		@RequestMapping(method = RequestMethod.GET)
+		public String initForm(ModelMap model){
+			
+			LoginPage loginpage = new LoginPage();
+			model.addAttribute("loginpage", loginpage);
+	 		return "LoginPage";
+		}
+	 
+		
+	   /* @RequestMapping(value="form", method = RequestMethod.POST)
+	    public String LoginPage(@ModelAttribute("loginpage") @Valid LoginPage loginpage, BindingResult result, ModelMap model) {
+	    	System.out.println("I am in LoginPage");
+	        
+			if(loginpage.getType().equalsIgnoreCase("Organizer")){
+				return "NewConference";
+			}
+			else if(loginpage.getType().equalsIgnoreCase("Participant")){
+				return "registerParticipant";
+			}
+			else if(loginpage.getType().equalsIgnoreCase("Speaker")){
+				return "SpeakerPage";
+			}
+			return "success";	
+	        
+	    }*/
+	    
+	    
 }
+

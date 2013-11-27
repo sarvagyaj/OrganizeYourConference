@@ -23,31 +23,38 @@
 				height: 24px;
 				padding: 0 13px;
 				cursor:pointer;}
+.error {
+	color: #ff0000;
+}
+.errorcss{
+	color: #000;
+	background-color: #ffEEEE;
+}
 </style>
 </head>
 
 <body id="LoginPage" >
+<form:form method="POST" commandName="loginpage">
+	
 <div class="loginDiv" style="display:none">
 
 	<div class="loginLabel">Log in <a style="font: 12px helvetica,arial,sans-serif;">Need an Account?</a> 
-	<span id="errorDisplay" style="display:none">The user name or password didn't work</span><span id="oyc-login-signup-close" class="boxCloser">&nbsp;</span>
-
+	<span id="oyc-login-signup-close" class="boxCloser">&nbsp;</span>
 	</div>	
 	<div id="oyc_login_form">
-	<form:form modelAttribute="loginpage">	
-
-		<form:input class="form-signin" path="username" id="oyc_email" type="text" placeholder="email"></form:input>		
+		<form:input class="form-signin" path="username" id="oyc_email" type="text" placeholder="email"></form:input>
+		<form:errors id="email_error" path="username" cssClass="error" />		
 		<form:input class="form-signin" id="oyc_pass" path="password" name="oyc_name_pass" placeholder="password" type="password" autocomplete="off"></form:input>
-		<button id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="button">Log In</button>
+		<form:errors id="password_error" path="password" cssClass="error" />
+		<button id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="submit">Log In</button>  
+		<!--<input id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="submit" ></input>-->
 		</br>
-		
 		<label for="type">User Type: </label>
         <form:radiobutton path="type" value="Organizer" />Organizer
 		<form:radiobutton path="type" value="Speaker" />Speaker
 		<form:radiobutton path="type" value="Participant" />Participant
-		
-	</form:form>
 	</div>
+	
 </div>
 
  <div class ="navbar-wrapper">
@@ -142,8 +149,9 @@
 </div>
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/carousel.js"></script>
 <script src="js/app.js"></script>
 <script src="js/holder.js"></script>
-
+</form:form>
 </body>
 </html>
