@@ -18,6 +18,14 @@
  	
 	<context:component-scan base-package="edu.sjsu.conference" />
 	
+	<bean class="edu.sjsu.conference.validator.LoginValidator" />
+	
+	<!-- Register the Conference.propertires -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="edu/sjsu/conference/properties/login" />
+	</bean>
+	
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/images/**" location="/images/" />

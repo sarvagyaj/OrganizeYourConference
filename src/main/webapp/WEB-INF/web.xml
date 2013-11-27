@@ -56,9 +56,9 @@
 
 	
 	<welcome-file-list>
-<!--  	<welcome-file>/WEB-INF/pages/registerParticipant.jsp</welcome-file> -->
-        <welcome-file>/WEB-INF/pages/HomePage.jsp</welcome-file>
+        <welcome-file>/WEB-INF/pages/LoginPage.jsp</welcome-file>
      </welcome-file-list>
-        
+     
+	 
  
 </web-app>
