@@ -37,8 +37,7 @@
 <form:form method="POST" commandName="loginpage">
 	
 <div class="loginDiv" style="display:none">
-
-	<div class="loginLabel">Log in <a style="font: 12px helvetica,arial,sans-serif;">Need an Account?</a> 
+	<div class="loginLabel">Log in <a style="font: 12px helvetica,arial,sans-serif;" href="SignUp">Need an Account?</a> 
 	<span id="oyc-login-signup-close" class="boxCloser">&nbsp;</span>
 	</div>	
 	<div id="oyc_login_form">
@@ -91,7 +90,7 @@
 	            <div class="carousel-caption" height="200px">
 	              <h1>Want to Host a conference</h1>
 	              <p>Organize all your conference with us for free</p> 
-	              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
+	              <p><a class="btn btn-large btn-primary" id="p1_login">Login Now</a></p>
 		</div>
 		</div>
 	</div>
@@ -100,7 +99,7 @@
             <div class="carousel-caption" height="200px">
               <h1>>Want to attend a Conference???</h1>
               <p>Choose a Conference of your best interest and Register with us today to attend it and get great benefits out of it!!</p> 
-              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
+              <p><a class="btn btn-large btn-primary" id="p2_login">Login Now</a></p>
             </div>
             </div>
 	</div>
@@ -109,7 +108,7 @@
 	            <div class="carousel-caption" height="200px">
 	              <h1>Organize you conference on Cloud!!</h1>
 	              <p>All the materials of the organized conference on Secure Cloud for all time access.</p> 
-	              <p><a class="btn btn-large btn-primary" href="LoginPage">Login Now</a></p>
+	              <p><a class="btn btn-large btn-primary" id="p3_login">Login Now</a></p>
 	     </div>
 	</div>
 	</div>
@@ -125,18 +124,18 @@
           
           <h2>Introduction to Finance</h2>
           <p>This course will introduce you to frameworks and tools to measure value; both for corporate and personal assets. It will also help you in decision-making, again at both the corporate and personal levels.</p>
-          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default btn-primary" id="p4_login">Register &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <h2>Model Thinking</h2>
           <p>In this class, you will learn how to think with models and use them to make sense of the complex world around us.</p>
-          <p><a class="btn btn-default btn-primary" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default btn-primary" id="p5_login">Register &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           
           <h2>Big Data in Education</h2>
           <p>Education is increasingly occurring online or in educational software, resulting in an explosion of data that can be used to improve educational effectiveness and support basic research on learning. In this course, you will learn how and when to use key methods for educational data mining and learning analytics on this data.</p>
-          <p><a class="btn btn-default  btn-primary" href="LoginPage">Register &raquo;</a></p>
+          <p><a class="btn btn-default  btn-primary" id="p6_login">Register &raquo;</a></p>
         </div>
       </div>
  

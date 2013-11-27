@@ -21,15 +21,23 @@ public class User implements Serializable {
 	protected String firstName,lastName,role;
 	protected String emailId;
 	protected String password;
+	protected String confirmPassword;
 	protected String location;
 	protected List<Long> conferenceID;
 	protected String position;
+	
 	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 	public String getLastName() {
 		return lastName;
