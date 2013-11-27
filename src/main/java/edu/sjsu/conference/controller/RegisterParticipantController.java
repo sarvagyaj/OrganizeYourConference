@@ -59,11 +59,11 @@ public class RegisterParticipantController {
 
 	        // Display all the documents from the collection
 	        List<Participant> part = repository.listParticipant();
-	        for (int i=0;i<part.size();i++)
-	        	System.out.println("firstname:"+part.get(i));
-
-	       //Code related to MongoDB [END]
-
+	        for (int i=0;i<part.size();i++) {
+	        	System.out.println("All participant details:"+part.get(i));
+	        }
+	        //Code related to MongoDB [END]
+	        
 	        model.addAttribute("particpantFirstName", participant.getFirstName());
 	        model.addAttribute("particpantLastName", participant.getLastName());
 	        model.addAttribute("participantLocation", participant.getLocation());

@@ -26,13 +26,13 @@ public class LoginPageController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String setupLogin(
-			@ModelAttribute("login") User user,
+			@ModelAttribute("loginpage") User user,
 			BindingResult loginpage) {
 		return "LoginPage";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String SignIn(@ModelAttribute("login") @Valid User loggedUser,
+	public String SignIn(@ModelAttribute("loginpage") @Valid User loggedUser,
 			BindingResult result, ModelMap model) {
 		User newUser = repository.getUser(loggedUser.getEmailId(),
 				loggedUser.getRole());
@@ -57,5 +57,4 @@ public class LoginPageController {
 		}
 
 	}
-
 }
