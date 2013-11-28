@@ -41,17 +41,17 @@
 	<span id="oyc-login-signup-close" class="boxCloser">&nbsp;</span>
 	</div>	
 	<div id="oyc_login_form">
-		<form:input class="form-signin" path="username" id="oyc_email" type="text" placeholder="email"></form:input>
-		<form:errors id="email_error" path="username" cssClass="error" />		
+		<form:input class="form-signin" path="emailId" id="oyc_email" type="text" placeholder="email"></form:input>
+		<form:errors id="email_error" path="emailId" cssClass="error" />		
 		<form:input class="form-signin" id="oyc_pass" path="password" name="oyc_name_pass" placeholder="password" type="password" autocomplete="off"></form:input>
 		<form:errors id="password_error" path="password" cssClass="error" />
 		<button id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="submit">Log In</button>  
 		<!--<input id="oyc_login_btn" class="btn btn-small btn-primary" style="float:none" type="submit" ></input>-->
 		</br>
 		<label for="type">User Type: </label>
-        <form:radiobutton path="type" value="Organizer" />Organizer
-		<form:radiobutton path="type" value="Speaker" />Speaker
-		<form:radiobutton path="type" value="Participant" />Participant
+        <form:radiobutton path="role" value="Organizer" />Organizer
+		<form:radiobutton path="role" value="Speaker" />Speaker
+		<form:radiobutton path="role" value="Participant" />Participant
 	</div>
 	
 </div>

@@ -18,8 +18,8 @@ public class LoginValidator implements Validator{
 	@Override
 	public void validate(Object target, Errors errors) {
 		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username",
-				"required.userName", "Field name is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailId",
+				"required.emailId", "Field name is required.");
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
 				"required.password", "Field name is required.");

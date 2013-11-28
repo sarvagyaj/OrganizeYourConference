@@ -39,8 +39,7 @@ public class SignUpController {
 
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String initForm(ModelMap model){
-		
+	public String initForm(ModelMap model){		
 		User user = new User();
 		model.addAttribute("user", user);
  		return "SignUp";
