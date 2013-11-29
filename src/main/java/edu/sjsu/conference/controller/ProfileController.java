@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,7 @@ import edu.sjsu.conference.repository.UserRepository;
 
 @Controller
 @Scope("request")
-@RequestMapping("/Profile")
+@RequestMapping("/ProfilePage")
 public class ProfileController {
 	
 			@Autowired
@@ -28,7 +27,7 @@ public class ProfileController {
 			//View Profile
 			@RequestMapping(method=RequestMethod.GET)
 			public ModelAndView getProfile() {
-				ModelAndView mv = new ModelAndView("Profile");
+				ModelAndView mv = new ModelAndView("ProfilePage");
 				System.out.println("email is :"+user.getEmailId()+" "+user.getFirstName());
 				mv.addObject("user", user);
 				return mv;
@@ -45,7 +44,7 @@ public class ProfileController {
 				//updating session object
 				user.setUser(updatedUser);
 				
-				ModelAndView mv = new ModelAndView("Profile");
+				ModelAndView mv = new ModelAndView("ProfilePage");
 				mv.addObject("user", updatedUser);
 				return mv;
 			}

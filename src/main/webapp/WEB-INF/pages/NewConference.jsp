@@ -6,13 +6,41 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="description" content="Create Conference">
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap-2.2.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
 <script src="js/app.js"></script>
 
+<script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
+
+<script type="text/javascript">
+$('#timepicker3').timepicker({
+minuteStep: 5,
+showInputs: false,
+disableFocus: true
+});
+</script>
+
+
+
+
+
+<link type="text/css" href="css/bootstrap.min.css" />
+<link type="text/css" href="css/bootstrap-timepicker.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/ParticipantSpeaker.css" rel="stylesheet">
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
 <title>Create Conference</title>
 
 <style type="text/css">
@@ -89,8 +117,13 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">Date</span></td>
-								<td><form:input type="text" path="date"
+								<td><form:input type="text" id = "datepicker" path="date"
 										placeholder="mm/dd/yyyy" /></td>
+							</tr> 
+							<tr>
+								<td><span class="label">Time</span></td>
+								<td><form:input type="text" id = "timepicker3" path="date"
+										placeholder="hh:mm" /></td>
 							</tr>
 							<tr>
 								<td><span class="label">Name of the Speaker</span></td>
@@ -99,13 +132,18 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">LinkedIn link of Speaker</span></td>
-								<td><form:input type="text" path="speaker_link"
+								<td><form:input type="email" path="speaker_link"
 										placeholder="Speaker's Linkedin link" /></td>
 							</tr>
 							<tr>
 								<td><span class="label">Email of Speaker</span></td>
-								<td><form:input type="text" path="speaker_email"
+								<td><form:input type="email" path="speaker_email"
 										placeholder="Speaker's Email ID" /></td>
+							</tr>
+							<tr>
+								<td><span class="label">Participants</span></td>
+								<td><form:input type="text" path="speaker_email"
+										placeholder="Participant's Email ID" /></td>
 							</tr>
 						</table>
 						<br> <br>

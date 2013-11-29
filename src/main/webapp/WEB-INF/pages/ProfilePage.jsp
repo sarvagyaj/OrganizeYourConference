@@ -76,7 +76,7 @@ body {
 			<!--/span-->
 
 
-			<form:form method="post" modelAttribute="profilepage"
+			<form:form method="post" modelAttribute="user" action="/ProfilePage"
 				class="form-signin">
 				<div class=offset3>
 					<div class="span5">

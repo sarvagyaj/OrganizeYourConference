@@ -65,7 +65,7 @@ public class SignUpController {
 			model.addAttribute("desc", user.getEmailId());
 			
 			//form success
-			return "HomePage";
+			return "UserHome";
 		}
 
 		
