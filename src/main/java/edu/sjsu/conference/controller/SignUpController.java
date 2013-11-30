@@ -23,7 +23,6 @@ import edu.sjsu.conference.validator.SignUpValidator;
 
 @Controller
 @RequestMapping("/SignUp")
-
 public class SignUpController {
 	
 	SignUpValidator signupValidator;
@@ -46,33 +45,26 @@ public class SignUpController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String createUser(@ModelAttribute("user") @Valid User user,
+	public String createUser(@ModelAttribute("user") @Valid User newUser,
 			ModelMap model, BindingResult result) {
 		
-		log.debug("createUser : SignUpController = " + user.toString());
-		signupValidator.validate(user, result);
+		log.debug("createUser : SignUpController = " + newUser.toString());
+		signupValidator.validate(newUser, result);
 		
 		if (result.hasErrors()) {
 			//if validator failed
 			return "SignUp";
-		} else {
-			
+		} else {			
 			// Create collection and insert into it.
-			repository.addUser(user);
-
-			model.addAttribute("particpantFirstName", user.getFirstName());
-			model.addAttribute("particpantLastName", user.getLastName());
-			model.addAttribute("desc", user.getEmailId());
+			repository.addUser(newUser);
 			
 			//form success
-			return "HomePage";
-		}
-
-		
+			return "UserHome";
+		}		
 	}
 
 	//API to check that userid entered which is used for logging in the system is not already present
-	@RequestMapping("/checkUniqueEmail")
+	/*@RequestMapping("/checkUniqueEmail")
 	public @ResponseBody
 	boolean checkUniqueEmail(@RequestParam("emailID") String emailID) {
 		long countEmails = repository.searchEmailID(emailID);
@@ -83,5 +75,5 @@ public class SignUpController {
 			System.out.println("Given emailID can be used as a new email id");
 			return false;
 		}
-	}
+	}*/
 }

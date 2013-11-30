@@ -76,7 +76,7 @@ body {
 			<!--/span-->
 
 
-			<form:form method="post" modelAttribute="profilepage"
+			<form:form method="post" modelAttribute="user" action="/ProfilePage"
 				class="form-signin">
 				<div class=offset3>
 					<div class="span5">
@@ -84,7 +84,7 @@ body {
 						<table id="profile">
 							<tr>
 								<td><span class="label">First Name </span></td>
-								<td><form:input type="text" id="FName" path="lastName"
+								<td><form:input type="text" id="FName" path="firstName"
 										placeholder="Your First Name" disabled="true" /></td>
 							</tr>
 							<tr>
@@ -94,13 +94,28 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">Email ID </span></td>
-								<td><form:input type="email" id="EmailID" path="emailId"
-										placeholder="Your Email ID" disabled="true" /></td>
+								<td><form:input type="email" id="email" path="emailId"
+										placeholder="Your Password" disabled="true" /></td>
+							</tr>
+							<tr>
+								<td><span class="label">Password </span></td>
+								<td><form:input type="password" id="password" path="password"
+										placeholder="Your Password" disabled="true" /></td>
+							</tr>
+							<tr>
+								<td><span class="label">Role</span></td>
+								<td><form:input type="text" id="role" path="role"
+										placeholder="Your Role" disabled="true" /></td>
 							</tr>
 							<tr>
 								<td><span class="label">Location</span></td>
 								<td><form:input type="text" id="Loc" path="location"
 										placeholder="Your Location" disabled="true" /></td>
+							</tr>
+							<tr>
+								<td><span class="label">Position</span></td>
+								<td><form:input type="text" id="position" path="position"
+										placeholder="Your Position" disabled="true" /></td>
 							</tr>
 						</table>
 						<br> <br>

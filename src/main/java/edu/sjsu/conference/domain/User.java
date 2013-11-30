@@ -23,7 +23,7 @@ public class User implements Serializable {
 	protected String password;
 	protected String confirmPassword;
 	protected String location;
-	protected List<Long> conferenceID;
+	//protected List<Long> conferenceID;
 	protected String position;
 	
 	
@@ -69,12 +69,12 @@ public class User implements Serializable {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public List<Long> getConferenceID() {
+	/*public List<Long> getConferenceID() {
 		return conferenceID;
 	}
 	public void setConferenceID(List<Long> conferenceID) {
 		this.conferenceID = conferenceID;
-	}
+	}*/
 	public String getPassword() {
 		return password;
 	}
@@ -98,5 +98,13 @@ public class User implements Serializable {
 		this.setRole(user.getRole());
 		this.setPosition(user.getPosition());
 	}
+	
+	@Override
+    public String toString() {
+        return String.format(
+                "User [firstName = %s, lastName = '%s', emailId = '%s', " + 
+                "location = '%s', role = '%s', position = '%s']",
+                firstName, lastName, emailId, location, role, position);
+    }
 	
 }

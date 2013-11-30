@@ -56,6 +56,7 @@ public class LoginPageController {
 			User newUser = repository.getUser(loggedUser.getEmailId(),
 					loggedUser.getRole());
 
+			//loginValidator.validate(target, errors);
 			if (newUser != null
 					&& loggedUser.getPassword().equals(newUser.getPassword())
 					&& loggedUser.getRole().equalsIgnoreCase(newUser.getRole())) {
