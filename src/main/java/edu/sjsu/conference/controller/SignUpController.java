@@ -7,18 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 
-import edu.sjsu.conference.domain.LoginPage;
 import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.repository.UserRepository;
-import edu.sjsu.conference.validator.LoginValidator;
 import edu.sjsu.conference.validator.SignUpValidator;
 
 @Controller
@@ -60,7 +54,8 @@ public class SignUpController {
 			
 			//form success
 			return "UserHome";
-		}		
+		}
+
 	}
 
 	//API to check that userid entered which is used for logging in the system is not already present
