@@ -89,13 +89,14 @@ public class User implements Serializable {
 	}
 	
 	//the method copies the attributes of 'user' to called Object's attributes 
+	//our website does not provide the functionality of changing the role and emailID
 	public void setUser(User user) {
 		this.setFirstName(user.getFirstName());
 		this.setLastName(user.getLastName());
 		this.setEmailId(user.getEmailId());
 		this.setPassword(user.getPassword());
 		this.setLocation(user.getLocation());
-		this.setRole(user.getRole());
+		this.setRole(user.getRole());					
 		this.setPosition(user.getPosition());
 	}
 	

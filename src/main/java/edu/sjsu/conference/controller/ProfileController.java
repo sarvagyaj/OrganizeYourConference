@@ -2,6 +2,7 @@ package edu.sjsu.conference.controller;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -23,12 +24,14 @@ public class ProfileController {
 			private User user;
 			@Autowired
 			private UserRepository repository;
+			
+			protected static Logger log = Logger.getLogger("ProfileController");
 
 			//View Profile
 			@RequestMapping(method=RequestMethod.GET)
 			public ModelAndView getProfile() {
 				ModelAndView mv = new ModelAndView("ProfilePage");
-				System.out.println("email is :"+user.getEmailId()+" "+user.getFirstName());
+				log.debug("email is :"+user.getEmailId()+" "+user.getFirstName());
 				mv.addObject("user", user);
 				return mv;
 			}
@@ -38,7 +41,8 @@ public class ProfileController {
 			public ModelAndView setProfile(@ModelAttribute("user") @Valid User changedUser,
 					BindingResult result) {
 				changedUser.setEmailId(user.getEmailId());
-				System.out.println("users email id :" + user.getEmailId());
+				changedUser.setRole(user.getRole());
+				log.debug("users email id to update :" + user.getEmailId());
 				User updatedUser=repository.updateUser(changedUser);
 				
 				//updating session object

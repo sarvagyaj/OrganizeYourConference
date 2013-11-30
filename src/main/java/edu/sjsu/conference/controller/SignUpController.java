@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,11 +17,15 @@ import edu.sjsu.conference.repository.UserRepository;
 import edu.sjsu.conference.validator.SignUpValidator;
 
 @Controller
+@Scope("request")
 @RequestMapping("/SignUp")
 public class SignUpController {
 	
 	SignUpValidator signupValidator;
 
+	@Autowired
+	private User user;
+	
 	@Autowired
 	private UserRepository repository;
 	
@@ -33,8 +38,8 @@ public class SignUpController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(ModelMap model){		
-		User user = new User();
-		model.addAttribute("user", user);
+		User newUser = new User();
+		model.addAttribute("user", newUser);
  		return "SignUp";
 	}
 	
@@ -49,26 +54,10 @@ public class SignUpController {
 			//if validator failed
 			return "SignUp";
 		} else {			
-			// Create collection and insert into it.
-			repository.addUser(newUser);
-			
-			//form success
-			return "UserHome";
+			repository.addUser(newUser);		// Create collection and insert into it.
+			user.setUser(newUser);				//setting session object
+			return "UserHome";					//form success
 		}
-
 	}
-
-	//API to check that userid entered which is used for logging in the system is not already present
-	/*@RequestMapping("/checkUniqueEmail")
-	public @ResponseBody
-	boolean checkUniqueEmail(@RequestParam("emailID") String emailID) {
-		long countEmails = repository.searchEmailID(emailID);
-		if (countEmails > 0) {
-			System.out.println("emailID alreay present");
-			return true;
-		} else {
-			System.out.println("Given emailID can be used as a new email id");
-			return false;
-		}
-	}*/
+	
 }
