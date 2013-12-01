@@ -62,6 +62,7 @@ body {
 </style>
 </head>
 <body>
+<p style="display:none" id="userrole">${user.role}</p>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -74,25 +75,23 @@ body {
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span2">
-				<div class="well sidebar-nav">
-					<ul class="nav nav-list">
-						<li><a class="nav-header" href="#">Home</a></li>
-						<li class="nav-header">Profile</li>
-						<li><a class="nav-list" href="ProfilePage">View/Edit
-								Profile</a></li>
-						<li class="nav-header">Conference</li>
-						<li><a class="nav-list" href="NewConference">Create
-								Conference</a></li>
-						<li><a class="nav-list" href="ViewAllPreviousConference">Previous
-								Conferences</a></li>
-						<li><a class="nav-list" href="RegisterParticipant">Register
-								for Conferences</a></li>
-					</ul>
-				</div>
-				<!--/.well -->
+	<div class="container-fluid" >
+     <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav" height="90%">
+            <ul class="nav nav-list">
+              <li ><a class="nav-header" href="UserHome">Home</a></li>
+              <li class="nav-header"> Profile</li>
+              <li><a class="nav-list" href="ProfilePage">View/Edit Profile</a></li>
+              <li class="nav-header">Conference</li>
+              <li><a id="creatconference" class="nav-list" href="NewConference">Create Conference</a></li>
+              <li><a id="prevconference" class="nav-list" href="ViewAllPreviousConference">Previous Conferences</a></li>
+              <li><a id="registeredconference" class="nav-list" href="RegisteredConference">Registered Conferences</a></li>
+              
+              </br></br> </br></br> </br></br>
+              <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="Logout">Logout</a></li>
+            </ul>
+          </div><!--/.well -->
 			</div>
 			<!--/span-->
 			<div class="span5">
@@ -154,5 +153,37 @@ body {
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$( document ).ready(function() {
+		pageLoad();
+		enableLinks();
+	});
+	
+	function pageLoad(){
+		
+	}
+		//this function to enable and disable links as per the user
+	function enableLinks(){
+		
+		var str = $("#userrole").html();
+		if(str == "Organizer"){
+			$("#creatconference").show();
+			$("#registeredconference").hide();
+			$("#prevconference").show();
+		}
+		else if(str == "Speaker"){
+			$("#creatconference").hide();
+			$("#registeredconference").hide();
+			$("#prevconference").show();
+		
+		}
+		else if(str == "Participant"){
+			$("#creatconference").hide();
+			$("#registeredconference").show();
+			$("#prevconference").show();
+			
+		}
+	}
+	</script>
 </body>
 </html>
