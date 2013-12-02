@@ -2,13 +2,20 @@ $( document ).ready(function() {
 	pageLoad();
 	enableLinks();
 });
+var jsondata = "";
 function pageLoad(){
-	//this is to load the recent conference and other details.
-	$.ajax({
-		  type: "GET",
-		  url: "UserHome/poojakasu",		  
-		  complete: LoadView()
-	});
+	//this is to load the recent conference and other details.	
+	/*$.ajax({
+		  type: "GET",		  		  	  
+		  url: "UserHome/getAllConference",	
+		  dataType:'text',
+		  error:function(jqXHR,textStatus,errorThrown){
+			  alert(errorThrown);},
+		  async:false,
+		  complete:function(jqXHR,textStatus){
+			  alert(textStatus);
+		  }
+	});*/
 }
 
 function LoadView(){

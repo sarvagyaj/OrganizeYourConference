@@ -51,9 +51,11 @@ public class SignUpController {
 		signupValidator.validate(newUser, result);
 		
 		if (result.hasErrors()) {
+			log.debug("Error in creating user");
 			//if validator failed
 			return "SignUp";
-		} else {			
+		} else {	
+			log.debug("created user");
 			repository.addUser(newUser);		// Create collection and insert into it.
 			user.setUser(newUser);				//setting session object
 			return "UserHome";					//form success

@@ -39,20 +39,27 @@ public class ConferenceRepository {
     }
 
     // List all the conferences from current date 
+    //for view all future conference 
     public List<Conference> listConferenceByDate() {
         
         Query dateQuery = new Query();
         dateQuery.addCriteria(Criteria.where("date").gte(GetCurrentDate()));
- 
-        List<Conference> confDetails = mongoTemplate.find(dateQuery, Conference.class, COLLECTION_NAME);
+        try{
+        List<Conference> confDetails;
+        confDetails = mongoTemplate.find(dateQuery, Conference.class, COLLECTION_NAME);
         System.out.println("dateQuery - " + dateQuery.toString());
         System.out.println("confDetails - " + confDetails.size());
         for (int i=0;i<confDetails.size();i++)
             {
                 System.out.println("Ramya - After dateQuery :"+confDetails.get(i));
             }
-
         return confDetails;
+        }
+        catch(Exception e){
+        	System.out.println("Error While fetching data" + e.getMessage());
+        	return null;
+        }
+        
     }
 
     // Get current Date

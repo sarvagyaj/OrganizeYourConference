@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,11 +66,13 @@
 	<form id="ViewConference">
         <div class="span9">
           <div class="hero-unit">
-            <h1>Conference one</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          <c:forEach var="objConf" items="${confer}">
+			<h1>${objConf.topic}</h1>
+			<p>${objConf.description}</p>
+			<p><a class="btn btn-primary btn-large" href=#'>View details &raquo;</a></p>						
+            </c:forEach>
           </div>
-          <div class="hero-unit">
+          <!-- <div class="hero-unit">
             <h1></h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p><a id="#" href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
@@ -84,7 +86,7 @@
             <h1>Hello, world!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          </div>                  
+          </div> -->                  
         </div><!--/span-->      
 	  </form>
 	   </div><!--/row-->
