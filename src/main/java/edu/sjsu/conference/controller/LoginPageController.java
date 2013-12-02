@@ -66,7 +66,7 @@ public class LoginPageController {
 				user.setUser(newUser);
 				status.setComplete();
 				// form success
-				return "UserHome";
+				return "redirect:/UserHome";// this way it will be redirected to that page
 			} else {
 				System.out.println("Incorrect username/password");
 				return "LoginPage";

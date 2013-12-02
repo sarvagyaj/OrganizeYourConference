@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +18,9 @@ import edu.sjsu.conference.domain.Conference;
 import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.repository.ConferenceRepository;
 
+@Controller
 @RequestMapping("/ViewConference")
+@Scope("request")
 public class ViewConferenceController {
 		
 	@Autowired
@@ -31,14 +36,14 @@ public class ViewConferenceController {
 
 	//Home of user, the page which he will he when he logs in
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
-	public ModelAndView returnIdPage(@RequestParam("id") String id) {
+	public ModelAndView returnIdPage(@PathVariable("id") String id) {
 		System.out.println("id  is : "+  id);
-		String userRole = "Organizer";
+		//String userRole = "Organizer";
 		ModelAndView mv = new ModelAndView("ViewConference");
 		Conference objConf; 
 		objConf = objConferenceRepo.fetchConferenceById(id);
 		mv.addObject("confer", objConf); 
-		mv.addObject("user.role", userRole); 
+		mv.addObject("user", user); 
 		return mv;
 	}
 }

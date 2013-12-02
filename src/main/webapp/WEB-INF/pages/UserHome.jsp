@@ -69,7 +69,7 @@
           <c:forEach var="objConf" items="${confer}">
 			<h1>${objConf.topic}</h1>
 			<p>${objConf.description}</p>
-			<p><a class="btn btn-primary btn-large" href=#'>View details &raquo;</a></p>						
+			<p><a class="btn btn-primary btn-large" href="ViewConference/${objConf.id}">View details &raquo;</a></p>						
             </c:forEach>
           </div>
           <!-- <div class="hero-unit">
