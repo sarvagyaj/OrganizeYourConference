@@ -21,6 +21,7 @@ public class ConferenceRepository {
     MongoTemplate mongoTemplate;
      
     public static final String COLLECTION_NAME = "conference";
+    private static int idCounter = 0;
 
     public Conference findByFirstName(String firstName) { return null; }
 
@@ -29,9 +30,39 @@ public class ConferenceRepository {
         if (!mongoTemplate.collectionExists(COLLECTION_NAME/*Conference.class*/)) {
             mongoTemplate.createCollection(COLLECTION_NAME/*Conference.class*/);
         }       
-        conference.setId(UUID.randomUUID().toString());
+        //conference.setId(UUID.randomUUID().toString());
+        conference.setId(generateId());
         mongoTemplate.insert(conference, COLLECTION_NAME);
     }
+
+    public synchronized int generateId()
+    {
+        int count =0;
+        for(int i=0;i<Integer.MAX_VALUE;i++)
+        {
+            Query dateQuery = new Query();
+            dateQuery.addCriteria(Criteria.where("id").gte(idCounter));
+            List<Conference> confDetails = mongoTemplate.find(dateQuery, Conference.class, COLLECTION_NAME);
+        
+            if (confDetails.size()>0)
+                idCounter++;
+            else
+            {
+                count = idCounter;
+                break;
+            }
+        }
+        return count;
+
+    }
+
+   /* public long generateId()
+    {
+        idCounter = new AtomicLong();
+        long count = idCounter.getAndIncrement();
+        System.out.println("counter = "+count);
+        return (count);
+    }*/
 
     // List all the conferences 
     public List<Conference> listConference() {

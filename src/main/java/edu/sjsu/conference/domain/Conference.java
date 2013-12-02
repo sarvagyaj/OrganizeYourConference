@@ -9,9 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Conference {
-	//private long id;
-	@Id
-	protected String id;
+	private int id;
+	//@Id
+	//protected String id;
 	
 	private String topic;
 	private String description;
@@ -28,11 +28,19 @@ public class Conference {
 		
 	}
 
-	public String getId() {
+	/*public String getId() {
 		return id;
 	}
 
 	public void setId(String id) {
+		this.id = id;
+	}*/
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
 		this.id = id;
 	}
 
