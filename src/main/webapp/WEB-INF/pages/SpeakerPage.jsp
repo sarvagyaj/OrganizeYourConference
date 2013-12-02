@@ -107,7 +107,10 @@ body {
 						<button type="button" id="editSpeaker" class="btn btn-primary">Edit</button>
 						<button type="submit" id="saveSpeaker" class="btn btn-primary">Save</button>
 						<button type="button" id="cancelSpeaker" class="btn btn-primary">Cancel</button>
-					</div>
+						<br>
+						<br>
+						<a href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/dropbox">Click </a>to upload documents to DropBox
+						</div>
 				</div>
 			</form:form>
 		</div>
