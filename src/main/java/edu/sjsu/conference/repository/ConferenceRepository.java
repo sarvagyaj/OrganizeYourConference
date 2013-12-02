@@ -111,7 +111,7 @@ public class ConferenceRepository {
     }
 
     // Get the conference details based on id
-    public Conference fetchConferenceById(String aId)
+    public Conference fetchConferenceById(Integer aId)
     {
         Query confQuery = new Query();
         confQuery.addCriteria(Criteria.where("id").is(aId));

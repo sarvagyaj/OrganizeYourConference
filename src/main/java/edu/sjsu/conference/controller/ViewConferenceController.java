@@ -39,9 +39,10 @@ public class ViewConferenceController {
 	public ModelAndView returnIdPage(@PathVariable("id") String id) {
 		System.out.println("id  is : "+  id);
 		//String userRole = "Organizer";
+		Integer objId = Integer.parseInt(id);
 		ModelAndView mv = new ModelAndView("ViewConference");
 		Conference objConf; 
-		objConf = objConferenceRepo.fetchConferenceById(id);
+		objConf = objConferenceRepo.fetchConferenceById(objId);
 		mv.addObject("confer", objConf); 
 		mv.addObject("user", user); 
 		return mv;

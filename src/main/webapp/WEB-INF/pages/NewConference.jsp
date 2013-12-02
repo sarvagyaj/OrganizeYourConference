@@ -131,7 +131,7 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">LinkedIn link of Speaker</span></td>
-								<td><form:input type="email" path="speaker_link"
+								<td><form:input type="text" path="speaker_link"
 										placeholder="Speaker's Linkedin link" /></td>
 							</tr>
 							<tr>
