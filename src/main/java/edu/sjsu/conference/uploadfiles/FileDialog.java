@@ -30,23 +30,21 @@ public class FileDialog{
         guiFrame.setLocationRelativeTo(null);
         guiFrame.setLayout(new BorderLayout());
         fileDialog = new JFileChooser();
-        guiFrame.setVisible(true);
     }
     
     //Show a open file dialog box
     public File openDialog()
     {
-    	
+    	 	guiFrame.setVisible(true);
         	fileDialog.showOpenDialog(guiFrame);
         	selectedFile = fileDialog.getSelectedFile();
             //System.out.println("Selected file:: " +selectedFile.getName());
             guiFrame.setVisible(false);
             if(selectedFile != null)
+            	
             	return selectedFile;
-            else
-            	fileDialog.showOpenDialog(guiFrame);
-    	
-		return selectedFile;
+           
+            return null;
 		
        
     }
