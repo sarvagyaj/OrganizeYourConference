@@ -21,7 +21,9 @@ public class Conference {
 	private String speaker_name;
 	private String speaker_link;
 	private String speaker_email;
-	private List<Conference> conference;
+	//private List<Conference> conference;
+	private List<String> participantEmailList;
+	private String participants;
 	
 	public Conference()
 	{
@@ -68,29 +70,13 @@ public class Conference {
 		this.venue = venue;
 	}
 
-	public List<Conference> getConference() {
+	/*public List<Conference> getConference() {
 		return conference;
 	}
 
 	public void setConference(List<Conference> conference) {
 		this.conference = conference;
-	}
-
-	public String gettopic() {
-		return topic;
-	}
-
-	public void settopic(String topic) {
-		this.topic = topic;
-	}
-
-	public String getdescription() {
-		return description;
-	}
-
-	public void setdescription(String description) {
-		this.description = description;
-	}
+	}*/
 
 	public String getSpeaker() {
 		return speaker_name;
@@ -124,12 +110,44 @@ public class Conference {
 		this.speaker_email = speaker_email;
 	}
 
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setParticipants(String participants) {
+		this.participants = participants;
+	}
+
+	public String getParticipants() {
+		return participants;
+	}
+
+	public List<String> getParticipantEmailList() {
+		return participantEmailList;
+	}
+
+	public void setParticipantEmailList(List<String> participantEmailList) {
+		this.participantEmailList = participantEmailList;
+	}
+
 	@Override
     public String toString() {
         return String.format(
                 "Conference [id = %s, date = '%s', time = '%s', " + 
-                "venue = '%s', topic = '%s', description = '%s', speaker = '%s']",
-                id, date, time, venue, topic, description, speaker_name);
+                "venue = '%s', topic = '%s', description = '%s', speaker = '%s', participants='%s']",
+                id, date, time, venue, topic, description, speaker_name, participants);
     }
 
 }

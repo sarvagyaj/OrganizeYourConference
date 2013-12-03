@@ -121,7 +121,7 @@ body {
 							</tr> 
 							<tr>
 								<td><span class="label">Time</span></td>
-								<td><form:input type="text" id = "timepicker3" path="date"
+								<td><form:input type="time" id = "timepicker3" path="time"
 										placeholder="hh:mm" /></td>
 							</tr>
 							<tr>
@@ -131,7 +131,7 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">LinkedIn link of Speaker</span></td>
-								<td><form:input type="email" path="speaker_link"
+								<td><form:input type="text" path="speaker_link"
 										placeholder="Speaker's Linkedin link" /></td>
 							</tr>
 							<tr>
@@ -141,7 +141,7 @@ body {
 							</tr>
 							<tr>
 								<td><span class="label">Participants</span></td>
-								<td><form:input type="text" path="speaker_email"
+								<td><form:input type="text" path="participants"
 										placeholder="Participant's Email ID" /></td>
 							</tr>
 						</table>

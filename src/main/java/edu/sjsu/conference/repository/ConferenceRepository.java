@@ -82,7 +82,7 @@ public class ConferenceRepository {
         System.out.println("confDetails - " + confDetails.size());
         for (int i=0;i<confDetails.size();i++)
             {
-                System.out.println("Ramya - After dateQuery :"+confDetails.get(i));
+                System.out.println("After dateQuery :"+confDetails.get(i));
             }
         return confDetails;
         }
