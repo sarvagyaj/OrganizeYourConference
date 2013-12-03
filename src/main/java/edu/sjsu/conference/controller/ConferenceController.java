@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import edu.sjsu.conference.domain.Conference;
+import edu.sjsu.conference.domain.AwsService;
 import edu.sjsu.conference.repository.ConferenceRepository;
 
 @Controller
@@ -20,6 +21,7 @@ public class ConferenceController {
 	@Autowired
 	private ConferenceRepository repository;
 
+		private AwsService awsService;
 	protected static Logger log = Logger.getLogger("ConferenceController");
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -44,6 +46,9 @@ public class ConferenceController {
 
 		//Insert into the collection conference, if collection not present then create it
 		repository.addConference(conference);
+		// Send emails to the participants using AWS SNS [START]
+		SendInvitationWithSNS(participantArray);
+		// Send emails to the participants using AWS SNS [END]
 		// Display all the documents from the collection
 		List<Conference> part = repository.listConference();
 		for (int i = 0; i < part.size(); i++) {
@@ -51,4 +56,18 @@ public class ConferenceController {
 		}
 		return "redirect:/UserHome";
 	}
+	    public void SendInvitationWithSNS(String[] emailList)
+	    {
+			String[] emailListToBeDelated;//delete this line for the demo
+	    	//FIXME
+			//TODO: Remove hardcoded email id lists. For testing purpose, give your email id.
+			String emailIds = "ramya.machina@gmail.com,ramya.machina@yahoo.com,ramya.machina@sjsu.edu";//delete this line for the demo
+			emailListToBeDelated = emailIds.split(",");//delete this line for the demo
+			AWSSNS sns = awsService.create();
+
+			if(sns != null)
+				{
+					sns.addSubscribers(emailListToBeDelated);// replace emailListToBeDelated with emailList for the demo.
+				}
+		}
 }
