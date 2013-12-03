@@ -40,6 +40,7 @@ margin-left:50px;
 		<div class="span9">
 		An error occurred !!!
 		</div>
+		<a href="ProfilePage">Click</a>
 	</div>
 	
 </body>

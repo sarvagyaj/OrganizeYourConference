@@ -113,7 +113,7 @@
               <li><a id="editdeleteconf" class="nav-list" href="#">Edit Conferences</a></li>
               <li><a id="registerconference" class="nav-list" href="../RegisteredConference">Register Conferences</a></li>
               <li><a id="unregisterconference" class="nav-list" href="../RegisteredConference">UnRegister Conferences</a></li>
-              <li><a id="uploaddocuments" class="nav-list" href="../UploadDocuments">Upload Documents</a></li>
+              <li><a id="uploaddocuments" class="nav-list" href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/dropbox">Upload Documents</a></li>
               </br></br> </br></br> </br></br>
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
             </ul>
