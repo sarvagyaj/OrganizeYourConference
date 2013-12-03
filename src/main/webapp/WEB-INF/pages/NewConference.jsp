@@ -17,12 +17,12 @@
 
 <script>
 $(function() {
-$( "#datepicker" ).datepicker();
+$( "#datepicker").datepicker();
 });
 </script>
 
 <script type="text/javascript">
-$('#timepicker3').timepicker({
+$('#timepicker').timepicker({
 minuteStep: 5,
 showInputs: false,
 disableFocus: true
@@ -121,7 +121,7 @@ body {
 							</tr> 
 							<tr>
 								<td><span class="label">Time</span></td>
-								<td><form:input type="time" id = "timepicker3" path="time"
+								<td><form:input type="text" id = "timepicker" path="time"
 										placeholder="hh:mm" /></td>
 							</tr>
 							<tr>
@@ -147,6 +147,7 @@ body {
 						</table>
 						<br> <br>
 						<button type="submit" id="create" class="btn btn-primary">Create</button>
+						<button type="button" id="edit" class="btn btn-primary">Edit</button>
 						<button type="button" id="cancelbtn" class="btn btn-primary">Cancel</button>
 					</div>
 				</form:form>

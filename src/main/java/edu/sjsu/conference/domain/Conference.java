@@ -16,7 +16,7 @@ public class Conference {
 	private String topic;
 	private String description;
 	private Date date;
-	private Time time;
+	private String time;
 	private String venue;
 	private String speaker_name;
 	private String speaker_link;
@@ -54,11 +54,11 @@ public class Conference {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 

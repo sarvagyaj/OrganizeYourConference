@@ -174,7 +174,7 @@
         </td>
         <td colspan="2" valign="top">:
         </td>
-        <td valign="top">${confer.speaker_link}
+        <td valign="top"><a style="color:blue" href="${confer.speaker_link}" >${confer.speaker_link}</a>
         </td>
         </tr>
         </table>
