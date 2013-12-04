@@ -44,6 +44,7 @@ body {
 						<td><span class="label">Documents uploaded</span></td>
 					</tr>
 					</table>
+					<a href="ProfilePage">Click</a>
 					</div>
 	</div>
 	</body>

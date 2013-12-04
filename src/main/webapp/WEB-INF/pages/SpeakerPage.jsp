@@ -109,7 +109,7 @@ body {
 						<button type="button" id="cancelSpeaker" class="btn btn-primary">Cancel</button>
 						<br>
 						<br>
-						<a href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/dropbox">Click </a>to upload documents to DropBox
+						<a href="http://sns.us-east-1.amazonaws.com/?Name=Sample-Topic&Action=CreateTopic&SignatureVersion=2&SignatureMethod=HmacSHA256&Timestamp=2013-12-03T03%3A00%3A00.000Z&AWSAccessKeyId=770585377988&Signature=gfzIF53exFVdpSNb8AiwN3Lv%2FNYXh6S%2Br3yySK70oX4%3D">Click </a>to upload documents to DropBox
 						</div>
 				</div>
 			</form:form>

@@ -110,10 +110,11 @@
               <li><a id="creatconference" class="nav-list" href="../NewConference">Create Conference</a></li>
               <li><a id="prevconference" class="nav-list" href="../ViewAllPreviousConference">Previous Conferences</a></li>
               <li><a id="registeredconference" class="nav-list" href="../RegisteredConference">Registered Conferences</a></li>
-              <li><a id="editdeleteconf" class="nav-list" href="#">Edit Conference</a></li>
-              <li><a id="registerconference" class="nav-list" modelAttribute="confer" href="../RegisterConference/${confer.id}">Register Conference</a></li>
+              <li><a id="editdeleteconf" class="nav-list" href="#">Edit Conferences</a></li>
+              <li><a id="registerconference" class="nav-list" href="../RegisterConference/${confer.id}">Register Conference</a></li>
               <li><a id="unregisterconference" class="nav-list" href="../DeRegisterConference/${confer.id}">DeRegister Conference</a></li>
-              <li><a id="uploaddocuments" class="nav-list" href="../UploadDocuments">Upload Documents</a></li>
+              <li><a id="uploaddocuments" class="nav-list" href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/dropbox">Upload Documents</a></li>
+
               </br></br> </br></br> </br></br>
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
             </ul>
