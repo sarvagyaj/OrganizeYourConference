@@ -1,5 +1,6 @@
 package edu.sjsu.conference.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -29,7 +30,7 @@ public class RegisteredParticipantsController {
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
     public ModelAndView registerParticipant(@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("RegisteredParticipant");
-		List<String> obj = repository.getAttendees(id);
+		HashMap<String, String> obj = repository.getAttendees(id);
 		mv.addObject("participants",obj);
 		return mv;
 	}

@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -21,6 +22,9 @@ public class ConferenceRepository {
 
 	@Autowired
 	MongoTemplate mongoTemplate;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	public static final String COLLECTION_NAME = "conference";
 	private static int idCounter = 0;
@@ -187,9 +191,8 @@ public class ConferenceRepository {
 		Conference conferenceDetail = mongoTemplate.findOne(confQuery,
 				Conference.class, COLLECTION_NAME);
 		log.debug("query to chk participant present in the conference - "
-						+ confQuery.toString());
-		log.debug("result of chk participant query :"
-				+ conferenceDetail);
+				+ confQuery.toString());
+		log.debug("result of chk participant query :" + conferenceDetail);
 		if (conferenceDetail != null) {
 			return true;
 		} else {
@@ -218,18 +221,31 @@ public class ConferenceRepository {
 		Conference savedConference = fetchConferenceById(confID);
 		return savedConference;
 	}
-	
+
 	public Conference updateConference(Conference conference) {
 		Conference requestedConference = fetchConferenceById(conference.getId());
 		requestedConference.setConference(conference);
-    	mongoTemplate.save(requestedConference,COLLECTION_NAME);
-    	Conference updatedConference = fetchConferenceById(requestedConference.getId());
-    	return updatedConference;	    	
-    }
-
-	public List<String> getAttendees(int confID) {
-		List<String> attendees = null;
-		return attendees;
+		mongoTemplate.save(requestedConference, COLLECTION_NAME);
+		Conference updatedConference = fetchConferenceById(requestedConference
+				.getId());
+		return updatedConference;
 	}
-	
+
+	public HashMap<String, String> getAttendees(int confID) {
+		Conference requestedConference = fetchConferenceById(confID);
+		List<String> attendees = requestedConference.getAttendees();
+		HashMap<String, String> particpantList = new HashMap<String, String>();
+		for (String email : attendees) {
+			User user = userRepository.getUser(email, "Participant");
+			//User user = userRepository.fetchUserByEmail("m@m");
+			if(user!=null) {
+			String name = user.getFirstName() + " " + user.getLastName();
+			particpantList.put(email, name);}
+			else {
+				System.out.println("null participant obtained");
+			}
+		}
+		return particpantList;
+	}
+
 }
