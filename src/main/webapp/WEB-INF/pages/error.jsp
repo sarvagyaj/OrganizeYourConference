@@ -1,47 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-	
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Organize Your Conference</title>
-<meta name="description" content="Participant Page">
+<meta name="description" content="Error Page">
 <link href="css/bootstrap.css" rel="stylesheet">
-<script src="jquery-2.0.3.js"></script>
-
-<style>
-p.margin
-{
-margin-top:70px;
-margin-bottom:100px;
-margin-right:50px;
-margin-left:50px;
-}
-
-body
-{
-background-color:#b0c4de;
-margin-top:50px;
-margin-bottom:100px;
-margin-right:50px;
-margin-left:50px;
-}
-</style>
-
-
+<link href="css/ParticipantSpeaker.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="offset5">
-<h3><b><font color = "3333CC" face="Eras Demi ITC">Error Page</font></b></h3></div>
-	<div class="row">
-		<div class="span9">
-		An error occurred !!!
-		</div>
-		<a href="ProfilePage">Click</a>
-	</div>
-	
+ <div class="hero-unit">
+			<h1>Please select file!!</h1>
+			<a href="UserHome">Click to go back</a>
+ </div>
+      <footer>
+        <p>&copy;SJSU Edu</p>
+      </footer>
 </body>
 </html>

@@ -861,14 +861,14 @@ pre code {
 .badge {
   display: inline-block;
   padding: 2px 4px;
-  font-size: 11.844px;
+  font-size: 15.844px;
   font-weight: bold;
   line-height: 14px;
-  color: #ffffff;
+  color: #000000;
   vertical-align: baseline;
   white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
+  text-shadow: 0 -0px 0 rgba(0, 0, 0, 0.25);
+  /* background-color: #999999; */
 }
 .label {
   -webkit-border-radius: 3px;
@@ -946,6 +946,7 @@ a.badge:focus {
   top: 0;
 }
 table {
+    margin-top: 60px;
   max-width: 100%;
   background-color: transparent;
   border-collapse: collapse;
@@ -1241,8 +1242,9 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 20px;
+  height: 30px;
   padding: 4px 6px;
+  margin-left: 25px;
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 20px;

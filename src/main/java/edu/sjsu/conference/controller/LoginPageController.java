@@ -1,6 +1,5 @@
 package edu.sjsu.conference.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,7 @@ import edu.sjsu.conference.validator.LoginValidator;
 @RequestMapping("/LoginPage")
 public class LoginPageController {
 
+	public static String name=null;
 	LoginValidator loginValidator;
 
 	@Autowired
@@ -73,6 +73,7 @@ public class LoginPageController {
 					+ loggedUser.getPassword() + " " + loggedUser.getRole());
 			User newUser = repository.getUser(loggedUser.getEmailId(),
 					loggedUser.getRole());
+			name = loggedUser.getEmailId();
 
 			//loginValidator.validate(target, errors);
 			if (newUser != null

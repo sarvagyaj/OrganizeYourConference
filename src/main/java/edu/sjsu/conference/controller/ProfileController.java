@@ -24,22 +24,23 @@ public class ProfileController {
 			private User user;
 			@Autowired
 			private UserRepository repository;
-			
-			protected static Logger log = Logger.getLogger("OrganizeYourConference");
+			protected static Logger log = Logger.getLogger("ProfileController");
 
+			
+			
 			//View Profile
 			@RequestMapping(method=RequestMethod.GET)
 			public ModelAndView getProfile() {
 				ModelAndView mv = new ModelAndView("ProfilePage");
 				log.debug("email is :"+user.getEmailId()+" "+user.getFirstName());
 				mv.addObject("user", user);
+				
 				return mv;
 			}
 			
 			//Edit Profile
 			@RequestMapping(method=RequestMethod.POST)
-			public ModelAndView setProfile(@ModelAttribute("user") @Valid User changedUser,
-					BindingResult result) {
+			public ModelAndView setProfile(@ModelAttribute("user") @Valid User changedUser,BindingResult result) {
 				changedUser.setEmailId(user.getEmailId());
 				changedUser.setRole(user.getRole());
 				log.debug("users email id to update :" + user.getEmailId());

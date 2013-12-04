@@ -8,6 +8,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.InputStreamEntity;
@@ -16,6 +17,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import edu.sjsu.conference.controller.LoginPageController;
 import edu.sjsu.conference.util.ClassConstant;
 
 
@@ -52,11 +54,17 @@ public class DropboxTest {
 				System.out.println("jsobObj:: " + jsobObj);
 				System.out.println("Access  Token :: " + accessToken);
 				
+				HttpGet info  = new HttpGet ("https://api.dropbox.com/1/account/info?access_token="+accessToken);
+				response = client.execute(info);
+				String accInfo = EntityUtils.toString(response.getEntity());
+				JSONObject jsobObjInfo = new JSONObject(accInfo);
+				System.out.println("jsobObj:: " + jsobObjInfo);
+								
 				File inputFile = new File(selectedFile.getAbsolutePath());
 				FileInputStream inputStream = new FileInputStream(inputFile);
 				System.out.println("inputFile length :: " + inputFile.length() + " " +inputFile.getName());
 				
-				HttpPut putFile = new HttpPut("https://api-content.dropbox.com/1/files_put?root="+"dropbox"+"&path="+"Public/"+inputFile.getName()+"&oauth_consumer_key="+"vqtzquh9kh5cph6"+"&oauth_signature=" +"5vpw8kpsjy5ky5t" + "&access_token="+accessToken);
+				HttpPut putFile = new HttpPut("https://api-content.dropbox.com/1/files_put?root="+"dropbox"+"&path="+ "Public/"+ LoginPageController.name+"/"+inputFile.getName()+"&oauth_consumer_key="+"vqtzquh9kh5cph6"+"&oauth_signature=" +"5vpw8kpsjy5ky5t" + "&access_token="+accessToken);
 				putFile.setEntity(new InputStreamEntity(inputStream,inputFile.length()));
 				
 				HttpResponse responsePut = client.execute(putFile);

@@ -175,7 +175,15 @@
         </td>
         <td colspan="2" valign="top">:
         </td>
-        <td valign="top"><a style="color:blue" href="${confer.speaker_link}" target="_blank">${confer.speaker_link}</a>
+  <td valign="top"><a style="color:blue" href="${confer.speaker_link}" target="_blank">${confer.speaker_link}</a>
+        </td>
+        </tr>
+         <tr>
+        <td colspan="3"><b>Dropbox Link</b>
+        </td>
+        <td colspan="2" valign="top">:
+        </td>
+        <td valign="top"><a style="color: blue" href = "https://www.dropbox.com/home/Public/"${confer.speaker_email} > https://www.dropbox.com/home/Public/${confer.speaker_email}</a>
         </td>
         </tr>
         </table>
