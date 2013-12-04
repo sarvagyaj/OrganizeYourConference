@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,6 +64,17 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->	 
+        <form id="ViewConference">
+        <div class="span9">
+          <div class="hero-unit">
+          <c:forEach var="objConf" items="${confer}">
+			<h1>${objConf.topic}</h1>
+			<p>${objConf.description}</p>
+			<p><a class="btn btn-primary btn-large" href="ViewConference/${objConf.id}">View details &raquo;</a></p>						
+            </c:forEach>
+          </div>                 
+        </div><!--/span-->      
+	  </form>
 		   </div><!--/row-->
 	    
       <hr>

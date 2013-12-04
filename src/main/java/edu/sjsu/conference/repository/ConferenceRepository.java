@@ -123,18 +123,18 @@ public class ConferenceRepository {
 	// Get all previous conference details of a organizer
 	// TODO: Need to modify the way we would send the input parameter if
 	// required
-	public List<Conference> getPreviousConferences(String aOrgnizer) {
-		Query orgQuery = new Query();
-		orgQuery.addCriteria(Criteria.where("organizer").is(aOrgnizer)
-				.and("date").lt(GetCurrentDate()));
-
-		List<Conference> confDetailByOrganizer = mongoTemplate.find(orgQuery,
-				Conference.class, COLLECTION_NAME);
-		System.out.println("orgQuery - " + orgQuery.toString());
-		System.out.println("confDetailByOrganizer - "
-				+ confDetailByOrganizer.size());
-		for (int i = 0; i < confDetailByOrganizer.size(); i++) {
-			System.out.println("After orgQuery :" + confDetailByOrganizer);
+    //public List<Conference> getPreviousConferences(String aOrgnizer)
+    public List<Conference> getPreviousConferences()
+    {
+        Query orgQuery = new Query();
+        //orgQuery.addCriteria(Criteria.where("organizer").is(aOrgnizer).and("date").lt(GetCurrentDate()));
+        orgQuery.addCriteria(Criteria.where("date").lt(GetCurrentDate()));
+        List<Conference> confDetailByOrganizer = mongoTemplate.find(orgQuery, Conference.class, COLLECTION_NAME);
+        System.out.println("orgQuery - " + orgQuery.toString());
+        System.out.println("confDetailByOrganizer - " + confDetailByOrganizer.size());
+        for (int i=0;i<confDetailByOrganizer.size();i++)
+        {
+            System.out.println("After orgQuery :"+confDetailByOrganizer);
 		}
 		return confDetailByOrganizer;
 	}
