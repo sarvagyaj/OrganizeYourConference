@@ -3,7 +3,7 @@ $(document).ready(function() {
 	if($("#email_error").text() !="" || $("#password_error").text() !="")
 	{
 		hidden= true;		
-		(".loginDiv").slideDown(500);
+		$(".loginDiv").slideDown(500);
 		$(".loginDiv").show();
 	}
 	$("#oyc_login").click(function() {			

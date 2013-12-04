@@ -73,6 +73,7 @@
 				Speaker
 				<form:radiobutton path="role" value="Participant" />
 				Participant
+				<form:errors path="role" cssClass="error" />
 			</div>
 			<br>
 			<p style="margin-left: 160px;">OR</p>
@@ -106,7 +107,7 @@
 			</div>
 		</div>
 
-
+		 <!-- Carousel -->
 		<div id="myCarousel" class="carousel slide" height="200">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -115,6 +116,7 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="item active">
+          		  
 					<div class="container">
 						<div class="carousel-caption" height="200px">
 							<h1>Want to Host a conference</h1>
@@ -126,9 +128,10 @@
 					</div>
 				</div>
 				<div class="item">
+          		
 					<div class="container">
 						<div class="carousel-caption" height="200px">
-							<h1>>Want to attend a Conference???</h1>
+							<h1>Want to attend a Conference???</h1>
 							<p>Choose a Conference of your best interest and Register
 								with us today to attend it and get great benefits out of it!!</p>
 							<p>
@@ -137,7 +140,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item">          		
 					<div class="container">
 						<div class="carousel-caption" height="200px">
 							<h1>Organize you conference on Cloud!!</h1>
@@ -149,51 +152,54 @@
 						</div>
 					</div>
 				</div>
+			</div>
 				<a class="left carousel-control" href="#myCarousel"
 					data-slide="prev"><span
 					class="glyphicon glyphicon-chevron-left"></span></a> <a
 					class="right carousel-control" href="#myCarousel" data-slide="next"><span
 					class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>
-
+			</div><!-- /.carousel -->
+		
 			<div class="container marketing">
 
 
 				<div class="row">
 					<div class="col-lg-4">
-
-						<h2>Introduction to Finance</h2>
-						<p>This course will introduce you to frameworks and tools to
+          			<img class="img-circle"	 src="images/conference.jpg">
+          				<h2>${title0}</h2>
+						<!--<p>This course will introduce you to frameworks and tools to
 							measure value; both for corporate and personal assets. It will
 							also help you in decision-making, again at both the corporate and
-							personal levels.</p>
+							personal levels.</p>-->
+						<p>${desc0}</p>
 						<p>
 							<a class="btn btn-default btn-primary" id="p4_login">Register
 								&raquo;</a>
-						</p>
+						</p> 
 					</div>
 					<div class="col-lg-4">
-						<h2>Model Thinking</h2>
-						<p>In this class, you will learn how to think with models and
-							use them to make sense of the complex world around us.</p>
+          			<img class="img-circle" src="images/meeting.jpg">
+						<h2>${title1}</h2>
+						<p>${desc1}</p>
 						<p>
-							<a class="btn btn-default btn-primary" id="p5_login">Register
+							<a class="btn btn-default btn-primary" id="p4_login">Register
 								&raquo;</a>
-						</p>
+						</p> 
 					</div>
 					<div class="col-lg-4">
-
-						<h2>Big Data in Education</h2>
-						<p>Education is increasingly occurring online or in
+ 					<img class="img-circle" src="images/Applegraphic.jpg">
+						<h2>${title2}</h2>
+						<!-- <p>Education is increasingly occurring online or in
 							educational software, resulting in an explosion of data that can
 							be used to improve educational effectiveness and support basic
 							research on learning. In this course, you will learn how and when
 							to use key methods for educational data mining and learning
-							analytics on this data.</p>
+							analytics on this data.</p> -->
+						<p>${desc2}</p>
 						<p>
-							<a class="btn btn-default  btn-primary" id="p6_login">Register
+							<a class="btn btn-default btn-primary" id="p4_login">Register
 								&raquo;</a>
-						</p>
+						</p> 
 					</div>
 				</div>
 
@@ -205,7 +211,7 @@
 				</footer>
 
 			</div>
-		</div>
+		
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/carousel.js"></script>

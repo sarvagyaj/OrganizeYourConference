@@ -24,7 +24,13 @@ public class LoginValidator implements Validator{
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
 				"required.password", "Field name is required.");
-			
+		
+		if(target != null && "password".equals(target))
+			errors.rejectValue("password", "incorrect.login");
+		if(target != null && "role".equals(target))
+			errors.rejectValue("role", "incorrect.role");
+		if(target != null && "login".equals(target))
+			errors.rejectValue("password", "incorrect.role");
 		/*ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword",
 				"required.confirmPassword", "Field name is required.");
 		
