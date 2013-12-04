@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.DB;
  
 @Configuration
 @EnableMongoRepositories
@@ -22,15 +23,15 @@ public class MongoConfig extends AbstractMongoConfiguration {
 	// This code needs to be ENABLED for checking mongodb in mongolab[START]	
 
 	 //connect to mongoDB (Mongolab AWS)
-		/*MongoClient mongoClient = new MongoClient("ds051788.mongolab.com:51788" ); 
+		MongoClient mongoClient = new MongoClient("ds051788.mongolab.com:51788" ); 
 		DB database = mongoClient.getDB( "organize-your-conference" ); 
-		boolean auth = database.authenticate("conference", "test123".toCharArray());*/
+		boolean auth = database.authenticate("conference", "test123".toCharArray());
 		
 	// This code needs to be ENABLED for checking mongodb in mongolab[END]
 
 	// This code needs to be DISABLED for checking mongodb in mongolab[START]	
 	// Connect to mongodb (localhost)
-		MongoClient mongoClient = new MongoClient("localhost" ); 
+		//MongoClient mongoClient = new MongoClient("localhost" ); 
 	// This code needs to be DISABLED for checking mongodb in mongolab[END]
 
 		return mongoClient;
