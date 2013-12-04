@@ -227,4 +227,9 @@ public class ConferenceRepository {
     	return updatedConference;	    	
     }
 
+	public List<String> getAttendees(int confID) {
+		List<String> attendees = null;
+		return attendees;
+	}
+	
 }

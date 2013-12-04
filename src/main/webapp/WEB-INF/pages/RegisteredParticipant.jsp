@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -110,11 +110,11 @@
               <li><a id="creatconference" class="nav-list" href="../NewConference">Create Conference</a></li>
               <li><a id="prevconference" class="nav-list" href="../ViewAllPreviousConference">Previous Conferences</a></li>
               <li><a id="registeredconference" class="nav-list" href="../RegisteredConference">Registered Conferences</a></li>
-              <li><a id="editdeleteconf" class="nav-list" href="../UpdateConference/${confer.id}">Edit Conference</a></li>
+              <li><a id="editdeleteconf" class="nav-list" href="../UpdateConference">Edit Conference</a></li>
               <li><a id="registerconference" class="nav-list" href="../RegisterConference/${confer.id}">Register Conference</a></li>
               <li><a id="unregisterconference" class="nav-list" href="../DeRegisterConference/${confer.id}">DeRegister Conference</a></li>
               <li><a id="uploaddocuments" class="nav-list" href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/dropbox">Upload Documents</a></li>
-	      <li><a id="registeredParticipants" class="nav-list" href="../RegisteredParticipant/${confer.id}">Registered Participants</a></li>
+			  
               </br></br> </br></br> </br></br>
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
             </ul>
@@ -123,62 +123,9 @@
 	<form id="ViewConference">
         <div class="span9">      
         <div  class = "viewconference">
-       <span> <h1>The ${confer.topic} Details</h1></span>
-        <table>
-        <tr>
-        <td colspan="3" valign="top" ><b>Topic Descriptions</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td>${confer.description}
-        </td>
-        </tr>
-        <tr>
-        <td colspan="3"><b>Venue</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td>${confer.venue}
-        </td>
-        </tr>
-        <tr>
-        <td colspan="3"><b>Date & Time of the event</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td>${confer.date} &  ${confer.time}
-        </td>
-        </tr>
-        </table>
-        <table>
-        <tr><h2>
-        Speaker Details</h2>
-        </tr>
-        <tr>
-        <td colspan="3"><b>Name of the Speaker</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td>${confer.speaker_name}
-        </td>
-        </tr>
-        <tr>
-        <td colspan="3"><b>Speaker's email</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td>${confer.speaker_email}
-        </td>
-        </tr>
-        <tr>
-        <td colspan="3"><b>LinkedIn Link</b>
-        </td>
-        <td colspan="2" valign="top">:
-        </td>
-        <td valign="top"><a style="color:blue" href="${confer.speaker_link}" target="_blank">${confer.speaker_link}</a>
-        </td>
-        </tr>
-        </table>
+       	 <c:forEach var="obj" items="${participants}">			
+			<p>${obj}</p>						
+            </c:forEach>
         </div>       
         </div><!--/span-->      
 	</form>
@@ -213,7 +160,7 @@
 			$("#editdeleteconf").show();
 			$("#unregisterconference").hide();
 			$("#uploaddocuments").hide();
-			$("#registeredParticipants").show();
+			
 		}
 		else if(str == "Speaker"){
 			$("#creatconference").hide();
@@ -223,7 +170,7 @@
 			$("#editdeleteconf").hide();
 			$("#unregisterconference").hide();
 			$("#uploaddocuments").show();
-			$("#registeredParticipants").hide();
+			
 		}
 		else if(str == "Participant"){
 			$("#creatconference").hide();
@@ -233,7 +180,7 @@
 			$("#editdeleteconf").hide();
 			$("#unregisterconference").show();
 			$("#uploaddocuments").hide();
-			$("#registeredParticipants").hide();
+			
 		}
 	}
 	</script>
