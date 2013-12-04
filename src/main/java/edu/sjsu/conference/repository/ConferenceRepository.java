@@ -255,5 +255,21 @@ public class ConferenceRepository {
 		}
 		return particpantList;
 	}
-
+	
+	public List<Conference> getRegisteredConference(String userEmail){
+		List<Conference> registeredConference = new ArrayList<Conference>();
+		List<Conference> listConf = listConference();
+		for(int i=0;i<listConf.size();i++){
+			List<String> objAttendee = listConf.get(i).getAttendees();
+			if(objAttendee != null && objAttendee.size() > 0){
+			for(int j=0;j<objAttendee.size();j++){
+				if(userEmail.equals(objAttendee.get(j).toString())){
+					registeredConference.add(listConf.get(i));
+				}
+			}
+			}
+		}
+		return registeredConference;
+	}
+	
 }
