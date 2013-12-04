@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -12,6 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import edu.sjsu.conference.domain.Conference;
+import edu.sjsu.conference.domain.User;
 
 @Repository
 public class ConferenceRepository {
@@ -21,6 +24,7 @@ public class ConferenceRepository {
 
 	public static final String COLLECTION_NAME = "conference";
 	private static int idCounter = 0;
+	protected static Logger log = Logger.getLogger("OrganizeYourConference");
 
 	public Conference findByFirstName(String firstName) {
 		return null;
@@ -123,18 +127,18 @@ public class ConferenceRepository {
 	// Get all previous conference details of a organizer
 	// TODO: Need to modify the way we would send the input parameter if
 	// required
-    //public List<Conference> getPreviousConferences(String aOrgnizer)
-    public List<Conference> getPreviousConferences()
-    {
-        Query orgQuery = new Query();
-        //orgQuery.addCriteria(Criteria.where("organizer").is(aOrgnizer).and("date").lt(GetCurrentDate()));
-        orgQuery.addCriteria(Criteria.where("date").lt(GetCurrentDate()));
-        List<Conference> confDetailByOrganizer = mongoTemplate.find(orgQuery, Conference.class, COLLECTION_NAME);
-        System.out.println("orgQuery - " + orgQuery.toString());
-        System.out.println("confDetailByOrganizer - " + confDetailByOrganizer.size());
-        for (int i=0;i<confDetailByOrganizer.size();i++)
-        {
-            System.out.println("After orgQuery :"+confDetailByOrganizer);
+	// public List<Conference> getPreviousConferences(String aOrgnizer)
+	public List<Conference> getPreviousConferences() {
+		Query orgQuery = new Query();
+		// orgQuery.addCriteria(Criteria.where("organizer").is(aOrgnizer).and("date").lt(GetCurrentDate()));
+		orgQuery.addCriteria(Criteria.where("date").lt(GetCurrentDate()));
+		List<Conference> confDetailByOrganizer = mongoTemplate.find(orgQuery,
+				Conference.class, COLLECTION_NAME);
+		System.out.println("orgQuery - " + orgQuery.toString());
+		System.out.println("confDetailByOrganizer - "
+				+ confDetailByOrganizer.size());
+		for (int i = 0; i < confDetailByOrganizer.size(); i++) {
+			System.out.println("After orgQuery :" + confDetailByOrganizer);
 		}
 		return confDetailByOrganizer;
 	}
@@ -173,31 +177,26 @@ public class ConferenceRepository {
 				COLLECTION_NAME);
 	}
 
-	// Updates the fields
-	public void updateConference(Conference conference) {
-
+	// check whether the participant is present in the attendees of the
+	// conference
+	public boolean checkParticipant(int confID, String userEmailId) {
+		Criteria c = new Criteria("id");
+		c.is(confID);
+		Query confQuery = new Query(c);
+		confQuery.addCriteria(Criteria.where("attendees").is(userEmailId));
+		Conference conferenceDetail = mongoTemplate.findOne(confQuery,
+				Conference.class, COLLECTION_NAME);
+		log.debug("query to chk participant present in the conference - "
+						+ confQuery.toString());
+		log.debug("result of chk participant query :"
+				+ conferenceDetail);
+		if (conferenceDetail != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	//check whether the participant is present in the attendees of the conference
-		public boolean checkParticipant(int confID, String userEmailId) {
-			Criteria c = new Criteria("id");
-			c.is(confID);
-			Query confQuery = new Query(c);
-			confQuery.addCriteria(Criteria.where("attendees").is(userEmailId));
-			Conference conferenceDetail = mongoTemplate.findOne(confQuery,
-					Conference.class, COLLECTION_NAME);
-			System.out
-					.println("query to chk participant present in the conference - "
-							+ confQuery.toString());
-			System.out.println("result of chk participant query :"
-					+ conferenceDetail);
-			if (conferenceDetail != null) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-	
 	public Conference addAttendees(int confID, String userEmailId) {
 		Conference requestedConference = fetchConferenceById(confID);
 		System.out.println("Received conf is : " + requestedConference);
@@ -220,6 +219,12 @@ public class ConferenceRepository {
 		return savedConference;
 	}
 	
-	
-	
+	public Conference updateConference(Conference conference) {
+		Conference requestedConference = fetchConferenceById(conference.getId());
+		requestedConference.setConference(conference);
+    	mongoTemplate.save(requestedConference,COLLECTION_NAME);
+    	Conference updatedConference = fetchConferenceById(requestedConference.getId());
+    	return updatedConference;	    	
+    }
+
 }

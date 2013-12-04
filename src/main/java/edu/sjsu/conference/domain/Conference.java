@@ -126,6 +126,19 @@ public class Conference {
 	public void setInvitedParticipantsList(List<String> invitedParticipantsList) {
 		this.invitedParticipantsList = invitedParticipantsList;
 	}
+	
+	public void setConference(Conference conf) {
+		this.setTopic(conf.getTopic());
+		this.setDescription(conf.getDescription());
+		this.setDate(conf.getDate());
+		this.setTime(conf.getTime());
+		this.setVenue(conf.getVenue());
+		this.setSpeaker(conf.getSpeaker());
+		this.setSpeaker_email(conf.getSpeaker_email());
+		this.setSpeaker_link(conf.getSpeaker_link());
+		//this.setInvitedParticipantsList(conf.getInvitedParticipantsList());
+		//this.setAttendees(conf.getAttendees());
+	}
 
 	@Override
 	public String toString() {

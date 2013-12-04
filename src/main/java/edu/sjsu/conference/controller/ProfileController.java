@@ -25,7 +25,7 @@ public class ProfileController {
 			@Autowired
 			private UserRepository repository;
 			
-			protected static Logger log = Logger.getLogger("ProfileController");
+			protected static Logger log = Logger.getLogger("OrganizeYourConference");
 
 			//View Profile
 			@RequestMapping(method=RequestMethod.GET)

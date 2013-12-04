@@ -21,7 +21,7 @@ public class DeRegisterParticipantController {
 			@Autowired
 	    	private ConferenceRepository repository;
 			
-			protected static Logger log = Logger.getLogger("RegisterParticipantController");
+			protected static Logger log = Logger.getLogger("OrganizeYourConference");
 
 			//delete the participant if he is registered for the conference
 			@RequestMapping(value="/{id}",method = RequestMethod.GET)

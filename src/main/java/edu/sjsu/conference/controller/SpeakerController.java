@@ -26,7 +26,7 @@ public class SpeakerController {
     @Autowired
     private SpeakerRepository speakerRepository;
 
-    protected static Logger log = Logger.getLogger("RegisterParticipantController");
+    protected static Logger log = Logger.getLogger("OrganizeYourConference");
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupRegistration(@ModelAttribute("speaker") Speaker speaker1 , BindingResult speaker) {

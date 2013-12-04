@@ -21,7 +21,7 @@ public class RegisterParticipantController {
 		@Autowired
     	private ConferenceRepository repository;
 		
-		protected static Logger log = Logger.getLogger("RegisterParticipantController");
+		protected static Logger log = Logger.getLogger("OrganizeYourConference");
 
 		//add the participant if he is not registered for the conference
 		@RequestMapping(value="/{id}",method = RequestMethod.GET)
