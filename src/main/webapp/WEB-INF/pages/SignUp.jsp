@@ -76,13 +76,13 @@ body {
 						<table id="signindetails">
 							<tr>
 							<td><span class="label">First Name</span></td>
-					    <td><form:input type="text" path="firstName" placeholder="Your First Name" /></td>	
+					    <td><form:input type="text" path="firstName" placeholder="First Name" /></td>	
 						<td><form:errors path="firstName" cssClass="error" /></td>
 							</tr>
 							<tr>
 								<td><span class="label">Last Name</span></td>
 					<td><form:input type="text" path="lastName"
-						placeholder="Your last Name" /></td>
+						placeholder="last Name" /></td>
 						<td><form:errors path="lastName" cssClass="error" />	</td>
 							</tr>
 							<tr>
@@ -96,30 +96,30 @@ body {
 							
 							<tr>
 							<td><span class="label">Email Address</span></td>
-							<td><form:input type="email" path="emailId" placeholder="Your Email ID" />
+							<td><form:input type="email" path="emailId" placeholder="Email ID" />
 							</td><td><form:errors path="emailId" cssClass="error" />	</td>
 							</tr>
 							
 							<tr>
 								<td><span class="label">Password</span></td>
-								<td><form:input type="password" path="password" placeholder="Your Email ID" />
+								<td><form:input type="password" path="password" placeholder="Password" />
 								</td><td><form:errors path="password" cssClass="error" />	</td>
 							</tr>
 							
 							<tr>
 								<td><span class="label">Confirm Password</span></td>
-								<td><form:input type="password" path="confirmPassword" placeholder="Your Email ID" />
+								<td><form:input type="password" path="confirmPassword" placeholder="Confirm Password" />
 								 </td><td><form:errors path="confirmPassword" cssClass="error" /></td>
 							</tr>
 							
 							<tr>
 								<td><span class="label">Location</span></td>
-								<td><form:input type="text" path="location" placeholder="Your Location" /><td>
+								<td><form:input type="text" path="location" placeholder="Location" /><td>
 										
 							</tr>		
 						<tr>
 							<td><span class="label">Position</span>	</td>			
-							<td><form:input type="text" path="position" placeholder="Your Location" /></td>					
+							<td><form:input type="text" path="position" placeholder="Position" /></td>					
 						</tr>					
 						</table>
 						<br> <br>

@@ -183,7 +183,7 @@
         </td>
         <td colspan="2" valign="top">:
         </td>
-        <td valign="top"><a style="color: blue" href = "https://www.dropbox.com/home/Public/"${confer.speaker_email} > https://www.dropbox.com/home/Public/${confer.speaker_email}</a>
+        <td valign="top"><a style="color: blue" href = "${dropboxURL}" target="_blank" >${dropboxURL}</a>
         </td>
         </tr>
         </table>

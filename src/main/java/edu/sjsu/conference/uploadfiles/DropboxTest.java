@@ -23,9 +23,12 @@ import edu.sjsu.conference.util.ClassConstant;
 
 public class DropboxTest {
 
+	public static String sharedURL = null;
+	
 	@Autowired
 	public static void uploadDocuments(String code,File selectedFile)
 	{
+		
 		HttpClient client = new DefaultHttpClient();
 
 		try {
@@ -66,13 +69,19 @@ public class DropboxTest {
 				
 				HttpPut putFile = new HttpPut("https://api-content.dropbox.com/1/files_put?root="+"dropbox"+"&path="+ "Public/"+ LoginPageController.name+"/"+inputFile.getName()+"&oauth_consumer_key="+"vqtzquh9kh5cph6"+"&oauth_signature=" +"5vpw8kpsjy5ky5t" + "&access_token="+accessToken);
 				putFile.setEntity(new InputStreamEntity(inputStream,inputFile.length()));
-				
 				HttpResponse responsePut = client.execute(putFile);
 				String fileInfo = EntityUtils.toString(responsePut.getEntity());
 				JSONObject jsobObjFile = new JSONObject(fileInfo);
-				System.out.println("jsobObj:: " + jsobObjFile);
-				inputStream.close();
 				
+				System.out.println("jsobObj:: " + jsobObjFile);
+							
+				HttpPost getLink = new HttpPost("https://api.dropbox.com/1/shares/?root="+"dropbox"+"&path="+"Public/"+ LoginPageController.name+"/"+"&oauth_consumer_key="+"vqtzquh9kh5cph6"+"&oauth_signature=" +"5vpw8kpsjy5ky5t" + "&access_token="+accessToken);
+				HttpResponse responsePost = client.execute(getLink);
+				String linkInfo = EntityUtils.toString(responsePost.getEntity());
+				JSONObject jsobObjLink = new JSONObject(linkInfo);
+				sharedURL = jsobObjLink.getString("url");
+				System.out.println("jsobObj link:: " + jsobObjLink + "Link:: " +sharedURL );
+				inputStream.close();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

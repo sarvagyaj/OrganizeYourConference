@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.sjsu.conference.domain.Conference;
 import edu.sjsu.conference.domain.User;
 import edu.sjsu.conference.repository.ConferenceRepository;
+import edu.sjsu.conference.uploadfiles.DropboxTest;
 
 @Controller
 @RequestMapping("/ViewConference")
@@ -42,9 +43,11 @@ public class ViewConferenceController {
 		Integer objId = Integer.parseInt(id);
 		ModelAndView mv = new ModelAndView("ViewConference");
 		Conference objConf; 
+		String dropboxURL = DropboxTest.sharedURL;
 		objConf = objConferenceRepo.fetchConferenceById(objId);
 		mv.addObject("confer", objConf); 
 		mv.addObject("user", user); 
+		mv.addObject("dropboxURL", dropboxURL);
 		return mv;
 	}
 }
