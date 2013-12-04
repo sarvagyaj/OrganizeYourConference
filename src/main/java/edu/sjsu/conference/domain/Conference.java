@@ -1,10 +1,8 @@
 package edu.sjsu.conference.domain;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -18,23 +16,12 @@ public class Conference {
 	private String speaker_name;
 	private String speaker_link;
 	private String speaker_email;
-	//private List<Conference> conference;
 	private List<String> invitedParticipantsList;
 	private String participants;
 	private List<String> attendees;
-	
-	public Conference()
-	{
-		
-	}
 
-	/*public String getId() {
-		return id;
+	public Conference() {
 	}
-
-	public void setId(String id) {
-		this.id = id;
-	}*/
 
 	public int getId() {
 		return id;
@@ -67,14 +54,6 @@ public class Conference {
 	public void setVenue(String venue) {
 		this.venue = venue;
 	}
-
-	/*public List<Conference> getConference() {
-		return conference;
-	}
-
-	public void setConference(List<Conference> conference) {
-		this.conference = conference;
-	}*/
 
 	public String getSpeaker() {
 		return speaker_name;
@@ -149,11 +128,12 @@ public class Conference {
 	}
 
 	@Override
-    public String toString() {
-        return String.format(
-                "Conference [id = %s, date = '%s', time = '%s', " + 
-                "venue = '%s', topic = '%s', description = '%s', speaker = '%s', participants='%s']",
-                id, date, time, venue, topic, description, speaker_name, participants);
-    }
+	public String toString() {
+		return String
+				.format("Conference [id = %s, date = '%s', time = '%s', "
+						+ "venue = '%s', topic = '%s', description = '%s', speaker = '%s', participants='%s']",
+						id, date, time, venue, topic, description,
+						speaker_name, participants);
+	}
 
 }

@@ -23,7 +23,7 @@ public class RegisterParticipantController {
 		
 		protected static Logger log = Logger.getLogger("RegisterParticipantController");
 
-		//add the participant is he is not registered for the conference
+		//add the participant if he is not registered for the conference
 		@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	    public String registerParticipant(@PathVariable("id") int id) {
 			

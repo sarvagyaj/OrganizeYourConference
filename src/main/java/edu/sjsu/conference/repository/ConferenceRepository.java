@@ -178,6 +178,26 @@ public class ConferenceRepository {
 
 	}
 
+	//check whether the participant is present in the attendees of the conference
+		public boolean checkParticipant(int confID, String userEmailId) {
+			Criteria c = new Criteria("id");
+			c.is(confID);
+			Query confQuery = new Query(c);
+			confQuery.addCriteria(Criteria.where("attendees").is(userEmailId));
+			Conference conferenceDetail = mongoTemplate.findOne(confQuery,
+					Conference.class, COLLECTION_NAME);
+			System.out
+					.println("query to chk participant present in the conference - "
+							+ confQuery.toString());
+			System.out.println("result of chk participant query :"
+					+ conferenceDetail);
+			if (conferenceDetail != null) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	
 	public Conference addAttendees(int confID, String userEmailId) {
 		Conference requestedConference = fetchConferenceById(confID);
 		System.out.println("Received conf is : " + requestedConference);
@@ -189,24 +209,17 @@ public class ConferenceRepository {
 		return savedConference;
 	}
 
-	//check whether the participant is present in the attendees of the conference
-	public boolean checkParticipant(int confID, String userEmailId) {
-		Criteria c = new Criteria("id");
-		c.is(confID);
-		Query confQuery = new Query(c);
-		confQuery.addCriteria(Criteria.where("attendees").is(userEmailId));
-		Conference conferenceDetail = mongoTemplate.findOne(confQuery,
-				Conference.class, COLLECTION_NAME);
-		System.out
-				.println("query to chk participant present in the conference - "
-						+ confQuery.toString());
-		System.out.println("result of chk participant query :"
-				+ conferenceDetail);
-		if (conferenceDetail != null) {
-			return true;
-		} else {
-			return false;
-		}
+	public Conference removeAttendees(int confID, String userEmailId) {
+		Conference requestedConference = fetchConferenceById(confID);
+		System.out.println("Received conf is : " + requestedConference);
+		List<String> attendees = requestedConference.getAttendees();
+		attendees.remove(userEmailId);
+		requestedConference.setAttendees(attendees);
+		mongoTemplate.save(requestedConference, COLLECTION_NAME);
+		Conference savedConference = fetchConferenceById(confID);
+		return savedConference;
 	}
+	
+	
 	
 }
