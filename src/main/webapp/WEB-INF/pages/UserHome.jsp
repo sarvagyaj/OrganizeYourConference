@@ -65,40 +65,19 @@
         </div><!--/span-->	 
 	<form id="ViewConference">
         <div class="span9">
-          <div class="hero-unit">
+          
           <c:forEach var="objConf" items="${confer}">
+          <div class="hero-unit">
 			<h1>${objConf.topic}</h1>
 			<p>${objConf.description}</p>
 			<p><a class="btn btn-primary btn-large" href="ViewConference/${objConf.id}">View details &raquo;</a></p>						
+           </div>
             </c:forEach>
           </div>
-          <!-- <div class="hero-unit">
-            <h1></h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a id="#" href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          </div>
-          <div class="hero-unit">         
-            <h1></h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>         
-          </div>
-          <div class="hero-unit">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          </div> -->                  
-        </div><!--/span-->      
-	  </form>
-	   </div><!--/row-->
-	    
-      <hr>
-
       <footer>
         <p>&copy;SJSU Edu</p>
       </footer>
-
-    </div>
-    <script src="//code.jquery.com/jquery.js"></script>
+     <script src="//code.jquery.com/jquery.js"></script>
 	<script src="js/UserHome.js"></script>
   </body>
 </html>

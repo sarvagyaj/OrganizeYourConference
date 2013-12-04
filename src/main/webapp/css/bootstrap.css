@@ -1738,6 +1738,7 @@ fieldset[disabled] .form-control {
 }
 
 textarea.form-control {
+	margin-left: 25px;
   height: auto;
 }
 
@@ -4822,12 +4823,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .label-default {
-  background-color: #999999;
+    background-color: #999999;
 }
 
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #808080;
+  background-color: #808080; 
 }
 
 .label-primary {

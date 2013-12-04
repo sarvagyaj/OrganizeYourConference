@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/Logout")
 public class LogoutController {
 
-	protected static Logger log = Logger.getLogger("OrganizeYourConference");
+	protected static Logger log = Logger.getLogger("LogoutController");
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String logout(HttpSession session) {

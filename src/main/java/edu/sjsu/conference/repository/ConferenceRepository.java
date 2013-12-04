@@ -58,42 +58,44 @@ public class ConferenceRepository {
 		}
 		return count;
 
-	}
+    }
 
-	/*
-	 * public long generateId() { idCounter = new AtomicLong(); long count =
-	 * idCounter.getAndIncrement(); System.out.println("counter = "+count);
-	 * return (count); }
-	 */
+   /* public long generateId()
+    {
+        idCounter = new AtomicLong();
+        long count = idCounter.getAndIncrement();
+        System.out.println("counter = "+count);
+        return (count);
+    }*/
 
-	// List all the conferences
-	public List<Conference> listConference() {
-		return mongoTemplate.findAll(Conference.class, COLLECTION_NAME);
-	}
+    // List all the conferences 
+    public List<Conference> listConference() {
+        return mongoTemplate.findAll(Conference.class, COLLECTION_NAME);
+    }
 
-	// List all the conferences from current date
-	// for view all future conference
-	public List<Conference> listConferenceByDate() {
-
-		Query dateQuery = new Query();
-		dateQuery.addCriteria(Criteria.where("date").gte(GetCurrentDate()));
-		try {
-			List<Conference> confDetails;
-			confDetails = mongoTemplate.find(dateQuery, Conference.class,
-					COLLECTION_NAME);
-			System.out.println("dateQuery - " + dateQuery.toString());
-			System.out.println("Conf List Size - " + confDetails.size());
-			/*
-			 * for (int i=0;i<confDetails.size();i++) {
-			 * System.out.println("After dateQuery :"+confDetails.get(i)); }
-			 */
-			return confDetails;
-		} catch (Exception e) {
-			System.out.println("Error While fetching data" + e.getMessage());
-			return null;
-		}
-
-	}
+    // List all the conferences from current date 
+    //for view all future conference 
+    public List<Conference> listConferenceByDate() {
+        
+        Query dateQuery = new Query();
+        dateQuery.addCriteria(Criteria.where("date").gte(GetCurrentDate()));
+        try{
+        List<Conference> confDetails;
+        confDetails = mongoTemplate.find(dateQuery, Conference.class, COLLECTION_NAME);
+        System.out.println("dateQuery - " + dateQuery.toString());
+        System.out.println("confDetails - " + confDetails.size());
+        for (int i=0;i<confDetails.size();i++)
+            {
+                System.out.println("After dateQuery :"+confDetails.get(i));
+            }
+        return confDetails;
+        }
+        catch(Exception e){
+        	System.out.println("Error While fetching data" + e.getMessage());
+        	return null;
+        }
+        
+    }
 
 	// Get current Date
 	private Date GetCurrentDate() {

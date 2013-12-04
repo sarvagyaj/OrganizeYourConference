@@ -107,7 +107,7 @@
 			</div>
 		</div>
 
-		 <!-- Carousel -->
+
 		<div id="myCarousel" class="carousel slide" height="200">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -116,7 +116,6 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="item active">
-          		  
 					<div class="container">
 						<div class="carousel-caption" height="200px">
 							<h1>Want to Host a conference</h1>
@@ -128,7 +127,6 @@
 					</div>
 				</div>
 				<div class="item">
-          		
 					<div class="container">
 						<div class="carousel-caption" height="200px">
 							<h1>Want to attend a Conference???</h1>
@@ -140,7 +138,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="item">          		
+				<div class="item">
 					<div class="container">
 						<div class="carousel-caption" height="200px">
 							<h1>Organize you conference on Cloud!!</h1>

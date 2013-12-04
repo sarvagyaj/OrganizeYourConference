@@ -29,10 +29,6 @@ disableFocus: true
 });
 </script>
 
-
-
-
-
 <link type="text/css" href="css/bootstrap.min.css" />
 <link type="text/css" href="css/bootstrap-timepicker.min.css" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">

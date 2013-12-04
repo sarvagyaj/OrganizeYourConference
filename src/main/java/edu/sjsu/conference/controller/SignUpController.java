@@ -33,7 +33,7 @@ public class SignUpController {
 	public SignUpController(SignUpValidator signupValidator){
 		this.signupValidator = signupValidator;
 	}
-	protected static Logger log = Logger.getLogger("OrganizeYourConference");
+	protected static Logger log = Logger.getLogger("SignUpController");
 
 	
 	@RequestMapping(method = RequestMethod.GET)

@@ -18,6 +18,8 @@ $(document).ready(function() {
 
 	 });*/
 	
+	
+	
 	$("#cancel").click(function() {
 		alert("Cancel..");
 		 /* $('#FName').val("");
