@@ -220,6 +220,11 @@ public class ConferenceRepository {
 		return savedConference;
 	}
 	
+	public List<String> getAttendees(int confID) {
+		List<String> attendees = null;
+		return attendees;
+	}
+	
 	
 	
 }
