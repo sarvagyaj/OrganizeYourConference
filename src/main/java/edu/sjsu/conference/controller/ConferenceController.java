@@ -64,7 +64,7 @@ public class ConferenceController {
 		//Insert into the collection conference, if collection not present then create it
 		repository.addConference(conference);
 		// Send emails to the participants using AWS SNS [START]
-		SendInvitationWithSNS(participantArray, conference.getId());
+		SendInvitationWithSNS(participantArray, conference.getId(), conference.getTopic());
 		// Send emails to the participants using AWS SNS [END]
 		// Display all the documents from the collection
 		List<Conference> part = repository.listConference();
@@ -73,7 +73,7 @@ public class ConferenceController {
 		}
 		return "redirect:/UserHome";
 	}
-	    public void SendInvitationWithSNS(String[] emailList, int aId)
+	    public void SendInvitationWithSNS(String[] emailList, int aId, String aTopic)
 	    {
 			String[] emailListToBeDelated;//delete this line for the demo
 	    	//FIXME
@@ -113,7 +113,7 @@ public class ConferenceController {
 
 			if(sns != null)
 				{
-					sns.addSubscribers(emailListToBeDelated, aId);// replace emailListToBeDelated with emailList for the demo.
+					sns.addSubscribers(emailListToBeDelated, aId, aTopic);// replace emailListToBeDelated with emailList for the demo.
 				}
 		}
 }

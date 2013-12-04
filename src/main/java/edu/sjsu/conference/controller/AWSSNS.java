@@ -34,7 +34,7 @@ public class AWSSNS implements Job {
         subscriberList = new ArrayList<String>();
     }
 
-    public void addSubscribers(String[] emailIdList, int cId)
+    public void addSubscribers(String[] emailIdList, int cId, String aTopic)
     {
         // prepare the credentials
         String accessKey = SNSConfig.ACCESS_KEY;
@@ -47,13 +47,14 @@ public class AWSSNS implements Job {
         // set the endpoint for us-west-1 region
         snsService.setEndpoint("https://sns.us-west-1.amazonaws.com");
         
-        this.run(emailIdList, cId);
+        this.run(emailIdList, cId, aTopic);
     }
 
-    public void run(String[] aEndPointList, int cId) 
+    public void run(String[] aEndPointList, int cId, String aTopic) 
     {
         //Create Topic
-        CreateTopicResult ret = snsService.createTopic(Integer.toString(cId));
+        String topicName = aTopic+"_"+Integer.toString(cId);
+        CreateTopicResult ret = snsService.createTopic(topicName);
         String topicArn = ret.getTopicArn();
         
         ListSubscriptionsByTopicResult result = snsService.listSubscriptionsByTopic(topicArn);
