@@ -3,6 +3,7 @@ package edu.sjsu.conference.repository;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -203,7 +204,12 @@ public class ConferenceRepository {
 		Conference requestedConference = fetchConferenceById(confID);
 		System.out.println("Received conf is : " + requestedConference);
 		List<String> attendees = requestedConference.getAttendees();
-		attendees.add(userEmailId);
+		if(attendees != null)
+			attendees.add(userEmailId);
+		else{
+			attendees = new ArrayList<String>();
+			attendees.add(userEmailId);
+		}
 		requestedConference.setAttendees(attendees);
 		mongoTemplate.save(requestedConference, COLLECTION_NAME);
 		Conference savedConference = fetchConferenceById(confID);

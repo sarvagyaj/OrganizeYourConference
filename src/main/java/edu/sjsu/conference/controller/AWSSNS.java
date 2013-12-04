@@ -27,6 +27,7 @@ public class AWSSNS implements Job {
     //private HashMap<String, Subscriber> subscriberList;
     private List<String> subscriberList;
     private static AmazonSNS snsService;
+    private static String topicName;
 
     public AWSSNS()
     {
@@ -53,10 +54,11 @@ public class AWSSNS implements Job {
     public void run(String[] aEndPointList, int cId, String aTopic) 
     {
         //Create Topic
-        String topicName = aTopic+"_"+Integer.toString(cId);
+    	this.topicName = aTopic +"_"+ Integer.toString(cId);// for execute method - dont change
+        String topicName = aTopic.replaceAll("\\s+","")+"_"+Integer.toString(cId);
         CreateTopicResult ret = snsService.createTopic(topicName);
         String topicArn = ret.getTopicArn();
-        
+       
         ListSubscriptionsByTopicResult result = snsService.listSubscriptionsByTopic(topicArn);
         List<Subscription> subscriptionList = result.getSubscriptions();
 
@@ -123,6 +125,7 @@ public class AWSSNS implements Job {
         for(Topic topic : topicList)
         {
             String topicARN = topic.getTopicArn();
+           
             List<Subscription> subscriptionList = snsService.listSubscriptionsByTopic(topicARN)
                                                   .getSubscriptions();
             
@@ -144,9 +147,21 @@ public class AWSSNS implements Job {
                         System.out.println("Subscription is pending - "+subscription.getEndpoint());
                         continue;
                     }
-
+                    int id=0;
+                    String topic_name="";
+                    
+                    if(this.topicName != null){
+	                    topic_name = this.topicName.split("_")[0];
+	                    if(this.topicName.split("_")[1] != null)
+	                    	id = Integer.parseInt(this.topicName.split("_")[1]);
+                    }
                     System.out.println("Publishing msg to "+subscription.getEndpoint());
-                    snsService.publish(topicARN, "This is a test msg!", "Test SNS");
+                    
+                    String message = "Hello Friend, \n \t We would like to invite you to attend an conference on '"
+                    + topic_name + "'. If you are interested please click the below link: \n" +
+                    		"http://localhost:8080/organize-your-conference/RSVPForm/" + id
+                    		+"\n\n\n Thanks,\n Organize your conference team";
+                    snsService.publish(topicARN,message, "Register for the Conference");
                     snsService.unsubscribe(subArn);
                 }
             }
