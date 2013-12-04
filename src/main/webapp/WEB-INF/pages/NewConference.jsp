@@ -140,9 +140,9 @@ body {
 										placeholder="Speaker's Email ID" /></td>
 							</tr>
 							<tr>
-								<td><span class="label">Participants</span></td>
+								<td><span class="label">Send Invites to</span></td>
 								<td><form:input type="text" path="participants"
-										placeholder="Participant's Email ID" /></td>
+										placeholder="Email IDs seperated by commas" /></td>
 							</tr>
 						</table>
 						<br> <br>

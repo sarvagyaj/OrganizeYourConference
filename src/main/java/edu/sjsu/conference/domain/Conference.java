@@ -10,9 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Conference {
 	private int id;
-	//@Id
-	//protected String id;
-	
 	private String topic;
 	private String description;
 	private Date date;
@@ -22,8 +19,9 @@ public class Conference {
 	private String speaker_link;
 	private String speaker_email;
 	//private List<Conference> conference;
-	private List<String> participantEmailList;
+	private List<String> invitedParticipantsList;
 	private String participants;
+	private List<String> attendees;
 	
 	public Conference()
 	{
@@ -134,12 +132,20 @@ public class Conference {
 		return participants;
 	}
 
-	public List<String> getParticipantEmailList() {
-		return participantEmailList;
+	public List<String> getAttendees() {
+		return attendees;
 	}
 
-	public void setParticipantEmailList(List<String> participantEmailList) {
-		this.participantEmailList = participantEmailList;
+	public void setAttendees(List<String> attendees) {
+		this.attendees = attendees;
+	}
+
+	public List<String> getInvitedParticipantsList() {
+		return invitedParticipantsList;
+	}
+
+	public void setInvitedParticipantsList(List<String> invitedParticipantsList) {
+		this.invitedParticipantsList = invitedParticipantsList;
 	}
 
 	@Override

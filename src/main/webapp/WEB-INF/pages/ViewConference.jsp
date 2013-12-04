@@ -110,9 +110,9 @@
               <li><a id="creatconference" class="nav-list" href="../NewConference">Create Conference</a></li>
               <li><a id="prevconference" class="nav-list" href="../ViewAllPreviousConference">Previous Conferences</a></li>
               <li><a id="registeredconference" class="nav-list" href="../RegisteredConference">Registered Conferences</a></li>
-              <li><a id="editdeleteconf" class="nav-list" href="#">Edit Conferences</a></li>
-              <li><a id="registerconference" class="nav-list" href="../RegisteredConference">Register Conferences</a></li>
-              <li><a id="unregisterconference" class="nav-list" href="../RegisteredConference">UnRegister Conferences</a></li>
+              <li><a id="editdeleteconf" class="nav-list" href="#">Edit Conference</a></li>
+              <li><a id="registerconference" class="nav-list" modelAttribute="confer" href="../RegisterConference/${confer.id}">Register Conference</a></li>
+              <li><a id="unregisterconference" class="nav-list" href="../DeRegisterConference/${confer.id}">DeRegister Conference</a></li>
               <li><a id="uploaddocuments" class="nav-list" href="../UploadDocuments">Upload Documents</a></li>
               </br></br> </br></br> </br></br>
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
@@ -174,7 +174,7 @@
         </td>
         <td colspan="2" valign="top">:
         </td>
-        <td valign="top"><a style="color:blue" href="${confer.speaker_link}" >${confer.speaker_link}</a>
+        <td valign="top"><a style="color:blue" href="${confer.speaker_link}" target="_blank">${confer.speaker_link}</a>
         </td>
         </tr>
         </table>
@@ -228,7 +228,7 @@
 			$("#prevconference").show();
 			$("#registerconference").show();
 			$("#editdeleteconf").hide();
-			$("#unregisterconference").hide();
+			$("#unregisterconference").show();
 			$("#uploaddocuments").hide();
 		}
 	}

@@ -1,68 +1,44 @@
 package edu.sjsu.conference.controller;
 
-import java.util.List;
-
-import javax.validation.Valid;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import edu.sjsu.conference.domain.Participant;
-import edu.sjsu.conference.repository.ParticipantRepository;
-
+import edu.sjsu.conference.domain.Conference;
+import edu.sjsu.conference.domain.User;
+import edu.sjsu.conference.repository.ConferenceRepository;
 
 @Controller
-@RequestMapping("/registerParticipant")
-//@SessionAttributes("participant")
-
+@RequestMapping("/RegisterConference")
+@Scope("request")
 public class RegisterParticipantController {
-
 		@Autowired
-    	private ParticipantRepository repository;
+		private User user;
+	
+		@Autowired
+    	private ConferenceRepository repository;
 		
 		protected static Logger log = Logger.getLogger("RegisterParticipantController");
 
-		@RequestMapping(method = RequestMethod.GET)
-	    public String setupRegistration(@ModelAttribute("participant") Participant participant1 , BindingResult participant) {
-	        return "registerParticipant"; 
+		//add the participant is he is not registered for the conference
+		@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	    public String registerParticipant(@PathVariable("id") int id) {
+			
+			if(repository.checkParticipant(id, user.getEmailId())) {
+				System.out.println("You have already been registered.");
+				return "redirect:/ViewConference/"+id;
+			}
+			Conference conference= repository.addAttendees(id,user.getEmailId());
+			if(conference != null) {
+				System.out.println("user "+user.getEmailId()+" has been successfully registered for the conference " +id);
+				return "redirect:/ViewConference/"+id;				
+			} else { 
+				System.out.println("Due to some techincal issues, you cannot be registered into the system at the moment.");
+				return "redirect:/ViewConference/"+id;					
+			}
 		}
 
-		//yet to be implemented fully
-	    @RequestMapping(method = RequestMethod.POST)
-	    public String registerParticipant( @ModelAttribute("participant") @Valid Participant participant, BindingResult result, ModelMap model) {
-	        if (result.hasErrors()) {
-	            return "registerParticipant";
-	        }
-
-	        //Code related to MongoDB [START]
-	        log.debug("registerParticipant() : Participant = "+participant.toString());
-
-	        //AbstractApplicationContext context = new AnnotationConfigApplicationContext(MongoConfig.class);
-        	//ParticipantRepository repository = context.getBean(ParticipantRepository.class);
-	        
-	        //Create collection and insert into it.
-	        repository.addParticipant(participant);
-
-	        // Display all the documents from the collection
-	        List<Participant> part = repository.listParticipant();
-
-	        for (int i=0;i<part.size();i++) {
-	        	System.out.println("All participant details:"+part.get(i));
-	        }
-
-	        //Code related to MongoDB [END]
-	        
-	        model.addAttribute("particpantFirstName", participant.getFirstName());
-	        model.addAttribute("particpantLastName", participant.getLastName());
-	        model.addAttribute("participantLocation", participant.getLocation());
-    
-			return "success";
-	        
-	    }
 }
