@@ -82,7 +82,7 @@ body {
 							<tr>
 								<td><span class="label">Last Name</span></td>
 					<td><form:input type="text" path="lastName"
-						placeholder="last Name" /></td>
+						placeholder="Last Name" /></td>
 						<td><form:errors path="lastName" cssClass="error" />	</td>
 							</tr>
 							<tr>

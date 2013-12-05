@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	$("#edit").click(function() {
-		alert("You can edit");
 		  $("#FName").prop("disabled", false);
 		  $("#LName").prop("disabled", false);
 		  $("#password").prop("disabled", false);
@@ -21,7 +20,7 @@ $(document).ready(function() {
 	
 	
 	$("#cancel").click(function() {
-		alert("Cancel..");
+		//alert("Cancel..");
 		 /* $('#FName').val("");
 		  $('#LName').val("");
 		  $('#password').val("");

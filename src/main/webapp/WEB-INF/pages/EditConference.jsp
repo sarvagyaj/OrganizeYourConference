@@ -152,11 +152,19 @@ body {
 	$( document ).ready(function() {
 		pageLoad();
 		enableLinks();
+		reloadPage();
 	});
 	
 	function pageLoad(){
 		
 	}
+	
+	function reloadPage()
+    {
+        $("#cancelbtn").click(function() {
+            location.reload();    });
+                
+    }
 		//this function to enable and disable links as per the user
 	function enableLinks(){
 		

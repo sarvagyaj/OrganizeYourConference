@@ -74,6 +74,7 @@
            </div>
             </c:forEach>
           </div>
+          </form>
       <footer>
         <p>&copy;SJSU Edu</p>
       </footer>

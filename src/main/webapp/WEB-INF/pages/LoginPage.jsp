@@ -80,7 +80,7 @@
 			<br>
 			<div class="linkedin_btn">
 				<a
-					href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://localhost:8080/organize-your-conference/linkedin"
+					href="https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile%20r_emailaddress%20&client_id=9xb4aca5h8ka&state=12345&redirect_uri=http://54.193.41.214:8080/organize-your-conference/linkedin"
 					id="consumer"  target="_blank"> <img src="images/linkedin_signin.png"
 					alt="Linkedin button" height="30px" width="180px"></a>
 			</div>
