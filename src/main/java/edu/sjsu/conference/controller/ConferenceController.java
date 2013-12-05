@@ -78,7 +78,7 @@ public class ConferenceController {
 	}
 	    public void SendInvitationWithSNS(String[] emailList, int aId, String aTopic)
 	    {
-			String[] emailListToBeDelated;//delete this line for the demo
+			//String[] emailListToBeDelated;//delete this line for the demo
 	    	//FIXME
 			//TODO: Remove hardcoded email id lists. For testing purpose, give your email id.
 			//String emailIds = "ramya.machina@gmail.com,machina_ramya@yahoo.com,ramya.machina@sjsu.edu";//delete this line for the demo
@@ -112,11 +112,12 @@ public class ConferenceController {
 		    	} catch (Exception e) {                      
 		                    e.printStackTrace();
 		                } 
-			//Quartz END
+			//Schedular for every 60 secs [END]
 
 			if(sns != null)
 				{
 					sns.addSubscribers(emailList, aId, aTopic);// replace emailListToBeDelated with emailList for the demo.
+
 				}
 		}
 }
