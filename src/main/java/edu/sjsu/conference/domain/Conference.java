@@ -1,12 +1,17 @@
 package edu.sjsu.conference.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 @Document
-public class Conference {
+@Component
+@Scope("session")
+public class Conference implements Serializable {
 	private int id;
 	private String topic;
 	private String description;
@@ -16,6 +21,7 @@ public class Conference {
 	private String speaker_name;
 	private String speaker_link;
 	private String speaker_email;
+	private String dropbox_link;
 	private List<String> invitedParticipantsList;
 	private String participants;
 	private List<String> attendees;
@@ -85,6 +91,14 @@ public class Conference {
 
 	public void setSpeaker_email(String speaker_email) {
 		this.speaker_email = speaker_email;
+	}
+	
+	public String getDropbox_link() {
+		return dropbox_link;
+	}
+
+	public void setDropbox_link(String dropbox_link) {
+		this.dropbox_link = dropbox_link;
 	}
 
 	public String getTopic() {

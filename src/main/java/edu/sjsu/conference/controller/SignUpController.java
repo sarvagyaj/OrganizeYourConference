@@ -39,6 +39,7 @@ public class SignUpController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(ModelMap model){		
 		User newUser = new User();
+		newUser.setRole("Organizer");
 		model.addAttribute("user", newUser);
  		return "SignUp";
 	}

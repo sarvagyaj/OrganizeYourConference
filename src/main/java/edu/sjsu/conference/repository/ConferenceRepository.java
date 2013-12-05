@@ -272,4 +272,13 @@ public class ConferenceRepository {
 		return registeredConference;
 	}
 	
+	public Conference addDropBoxLink(int confID, String dropboxLink) {
+		Conference requestedConference = fetchConferenceById(confID);
+		System.out.println("Received conf is : " + requestedConference);
+		requestedConference.setDropbox_link(dropboxLink);
+		mongoTemplate.save(requestedConference, COLLECTION_NAME);
+		Conference savedConference = fetchConferenceById(confID);
+		return savedConference;
+	}
+	
 }

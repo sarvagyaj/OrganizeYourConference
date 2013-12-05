@@ -30,6 +30,9 @@ public class ViewConferenceController {
 	@Autowired
 	User user;
 	
+	@Autowired
+	Conference sessionConference;
+	
 	@RequestMapping(value="", method = RequestMethod.GET)
 	public String setupHome() {
 		return "ViewConference";
@@ -43,11 +46,12 @@ public class ViewConferenceController {
 		Integer objId = Integer.parseInt(id);
 		ModelAndView mv = new ModelAndView("ViewConference");
 		Conference objConf; 
-		String dropboxURL = DropboxTest.sharedURL;
+		sessionConference.setId(objId);
+		//String dropboxURL = DropboxTest.sharedURL;
 		objConf = objConferenceRepo.fetchConferenceById(objId);
 		mv.addObject("confer", objConf); 
 		mv.addObject("user", user); 
-		mv.addObject("dropboxURL", dropboxURL);
+		mv.addObject("dropboxURL", objConf.getDropbox_link());
 		return mv;
 	}
 }
