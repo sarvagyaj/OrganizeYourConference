@@ -113,7 +113,7 @@
               <li><a id="editdeleteconf" class="nav-list" href="../UpdateConference/${confer.id}">Edit Conference</a></li>
               <li><a id="registerconference" class="nav-list" href="../RegisterConference/${confer.id}">Register Conference</a></li>
               <li><a id="unregisterconference" class="nav-list" href="../DeRegisterConference/${confer.id}">DeRegister Conference</a></li>
-              <li><a id="uploaddocuments" class="nav-list" href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=http://54.193.41.214:8080/organize-your-conference/dropbox" target="_blank">Upload Documents</a></li>
+              <li><a id="uploaddocuments" class="nav-list" href="https://www.dropbox.com/1/oauth2/authorize?response_type=code&client_id=vqtzquh9kh5cph6&state=12345&redirect_uri=54.193.41.214:8080/organize-your-conference/dropbox" target="_blank">Upload Documents</a></li>
 	      <li><a id="registeredParticipants" class="nav-list" href="../RegisteredParticipant/${confer.id}">Registered Participants</a></li>
               </br></br> </br></br> </br></br>
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
