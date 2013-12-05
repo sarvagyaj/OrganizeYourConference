@@ -119,10 +119,12 @@
               <li class="nav-header"><a class="nav-list"  style="color:white" id="idlogout" href="../Logout">Logout</a></li>
             </ul>
           </div><!--/.well -->
-        </div><!--/span-->	 
+        </div><!--/span-->
+        	 
 	<form id="ViewConference">
         <div class="span9">      
-        <div  class = "viewconference">
+        
+        <div  class = "viewconference"><span>${msg}</span>
        <span> <h1>The ${confer.topic} Details</h1></span>
         <table>
         <tr>

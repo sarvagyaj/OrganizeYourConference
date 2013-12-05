@@ -59,7 +59,7 @@ public class SignUpController {
 			log.debug("created user");
 			repository.addUser(newUser);		// Create collection and insert into it.
 			user.setUser(newUser);				//setting session object
-			return "UserHome";					//form success
+			return "redirect:/UserHome";					//form success
 		}
 	}
 	
