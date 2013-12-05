@@ -159,7 +159,7 @@ public class AWSSNS implements Job {
                     
                     String message = "Hello Friend, \n \t We would like to invite you to attend an conference on '"
                     + topic_name + "'. If you are interested please click the below link: \n" +
-                    		"http://localhost:8080/organize-your-conference/RSVPForm/" + id
+                    		"http://54.193.41.214:8080/organize-your-conference/RSVPForm/" + id
                     		+"\n\n\n Thanks,\n Organize your conference team";
                     snsService.publish(topicARN,message, "Register for the Conference");
                     snsService.unsubscribe(subArn);

@@ -123,8 +123,8 @@
         	 
 	<form id="ViewConference">
         <div class="span9">      
-        
-        <div  class = "viewconference"><span>${msg}</span>
+        <h2><span style="color:red">${msg}</span></h2>
+        <div  class = "viewconference">
        <span> <h1>The ${confer.topic} Details</h1></span>
         <table>
         <tr>

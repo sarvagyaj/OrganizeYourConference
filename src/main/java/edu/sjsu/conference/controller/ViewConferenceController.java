@@ -42,9 +42,18 @@ public class ViewConferenceController {
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	public ModelAndView returnIdPage(@PathVariable("id") String id) {
 		System.out.println("id  is : "+  id);
+		String msg = "";
+		ModelAndView mv = new ModelAndView("ViewConference");
+		if(id.contains("_")){
+			System.out.println("id  is : "+  id);
+			msg = id.split("_")[1];
+			mv.addObject("msg", msg);
+			id = id.split("_")[0];
+		}
+		System.out.println("id after is : "+  id);
 		//String userRole = "Organizer";
 		Integer objId = Integer.parseInt(id);
-		ModelAndView mv = new ModelAndView("ViewConference");
+		
 		Conference objConf; 
 		sessionConference.setId(objId);
 		//String dropboxURL = DropboxTest.sharedURL;

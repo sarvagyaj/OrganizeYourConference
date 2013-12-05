@@ -31,27 +31,23 @@ public class RegisterParticipantController {
 		//add the participant if he is not registered for the conference
 		@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	    public String registerParticipant(@PathVariable("id") int id) {			
-			String msg ="";
-			ModelAndView mv = new ModelAndView("redirect:/ViewConference/"+id);
+			String msg ="";			
 			if(repository.checkParticipant(id, user.getEmailId())) {
 				msg = "You have already been registered.";
 				System.out.println("You have already been registered.");
-				mv.addObject("msg", msg);
+				return "redirect:/ViewConference/"+id+"_" +msg;
 			}
 			Conference conference= repository.addAttendees(id,user.getEmailId());
 			if(conference != null) {
-				msg = "user "+user.getEmailId()+" has been successfully registered for the conference " +id;
+				msg = "You has been successfully registered for the conference ";
 				System.out.println("user "+user.getEmailId()+" has been successfully registered for the conference " +id);
-				//mv.addObject("msg", msg);
-				mv.addObject("msg", msg);
-				//return "redirect:/ViewConference/"+id;				
+				return "redirect:/ViewConference/"+id+"_" +msg;			
 			} else { 
 				msg = "Due to some techincal issues, you cannot be registered into the system at the moment.";
 				System.out.println("Due to some techincal issues, you cannot be registered into the system at the moment.");
-				mv.addObject("msg", msg);
-				//return "redirect:/ViewConference/"+id;					
+				return "redirect:/ViewConference/"+id+"_" +msg;					
 			}
-			return "redirect:/ViewConference/"+id;
+			
 		}
 
 }
