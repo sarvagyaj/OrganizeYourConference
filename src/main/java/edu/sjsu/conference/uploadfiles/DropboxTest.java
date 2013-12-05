@@ -39,7 +39,7 @@ public class DropboxTest {
 			nameValuePairs.add(new BasicNameValuePair("grant_type",
 					"authorization_code"));
 			nameValuePairs.add(new BasicNameValuePair("redirect_uri",
-					"http://"+ClassConstant.REDIRECT_URI+"/organize-your-conference/dropbox"));
+					"https://"+ClassConstant.REDIRECT_URI+"/organize-your-conference/dropbox"));
 			nameValuePairs.add(new BasicNameValuePair("client_id",
 					"vqtzquh9kh5cph6"));
 			nameValuePairs.add(new BasicNameValuePair("client_secret",
